@@ -1,24 +1,20 @@
 "*":
   editor:
     invisibles: {}
-    fontSize: 15
+    fontSize: 12
     showIndentGuide: true
-    showInvisibles: true
+    showInvisibles: false
     scrollPastEnd: true
-    fontFamily: "Hack"
+    fontFamily: "Monoisome"
   core:
     hideGitIgnoredFiles: true
     autoHideMenuBar: true
     projectHome: "~/Code/"
     disabledPackages: [
-      "metrics"
-      "exception-reporting"
+      "wrap-guide"
     ]
   welcome:
     showOnStartup: false
   linter: {}
-  "go-plus":
-    goPath: "~/Code/Go"
-  "go-rename": {}
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideVcsIgnoredFiles: false
