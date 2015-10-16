@@ -1,6 +1,6 @@
 [user]
-    name = Matthew Mahnke
-    email = mahnkem@msoe.edu
+    name = AUTHORNAME
+    email = AUTHOREMAIL
     helper = cache
 [alias]
     add-upstream      = !zsh -ic add-upstream
