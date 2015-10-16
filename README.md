@@ -1,13 +1,9 @@
-# carlos' dotfiles  [![DevOps By Rultor.com][rb]][rb] [![Build Status][tb]][tp]
-> Runs on Linux and OSX. Configurations for ZSH, SublimeText 3, Java, Ruby, Terminals and others.
+# matt's dotfiles
+> Runs on Linux and OSX. Configurations for ZSH, Java, Ruby, Terminals and others.
 
 ![screenshot][scrn]
 
-[rb]: http://www.rultor.com/b/caarlos0/dotfiles
-[rp]: http://www.rultor.com/p/caarlos0/dotfiles
-[tb]: https://travis-ci.org/caarlos0/dotfiles.svg?branch=master
-[tp]: https://travis-ci.org/caarlos0/dotfiles
-[scrn]: https://raw.githubusercontent.com/caarlos0/dotfiles/master/screenshot.png
+[scrn]: https://raw.githubusercontent.com/mattmahn/dotfiles/master/screenshot.png
 
 ## dotfiles
 
@@ -20,7 +16,7 @@ up into the main areas I used (Ruby, git, system libraries, and so on), so I
 structured the project accordingly.
 
 If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the subject][post].
+awesome, you might want to [read Carlos Becker's post on the subject][post].
 
 [post]: http://carlosbecker.com/posts/dotfiles-are-meant-to-be-forked/
 
