@@ -9,6 +9,7 @@ apm install \
     autocomplete-paths \
     autocomplete-python \
     color-picker \
+    editorconfig \
     file-icons \
     git-projects \
     hex \
