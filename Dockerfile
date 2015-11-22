@@ -1,9 +1,14 @@
-# caarlos0/dotfiles test container
+# mattmahn/dotfiles test container
 FROM ubuntu
 MAINTAINER Matthew Mahnke <mmahnke18@gmail.com>
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y software-properties-common wget zsh git curl python
+RUN apt-get update && apt-get install -y \
+  curl \
+  git \
+  python \
+  software-properties-common \
+  wget \
+  zsh
 
 COPY . /root/.dotfiles
 
