@@ -1,6 +1,6 @@
 # caarlos0/dotfiles test container
 FROM ubuntu
-MAINTER Matthew Mahnke <mmahnke18@gmail.com>
+MAINTAINER Matthew Mahnke <mmahnke18@gmail.com>
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y software-properties-common wget zsh git curl python
