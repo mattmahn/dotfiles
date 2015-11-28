@@ -3,6 +3,7 @@
 apm install \
     atom-beautify \
     atom-justify \
+    atom-material-ui \
     atom-ternjs \
     autocomplete-emojis \
     autocomplete-hack \
