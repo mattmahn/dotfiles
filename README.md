@@ -1,8 +1,10 @@
-# matt's dotfiles
+# matt's dotfiles  [![Build Status][tb]][tp]
 > Runs on Linux and OSX. Configurations for ZSH, Java, Ruby, Terminals and others.
 
 ![screenshot][scrn]
 
+[tb]: https://travis-ci.org/mattmahn/dotfiles.svg?branch=master
+[tp]: https://travis-ci.org/mattmahn/dotfiles
 [scrn]: https://raw.githubusercontent.com/mattmahn/dotfiles/master/screenshot.png
 
 ## dotfiles
