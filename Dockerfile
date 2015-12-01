@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
   git \
   python \
   software-properties-common \
+  vim \
   wget \
   zsh
 
