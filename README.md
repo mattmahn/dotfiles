@@ -27,7 +27,7 @@ awesome, you might want to [read Carlos Becker's post on the subject][post].
 Run this:
 
 ```sh
-bash -c "$(wget -O - https://raw.githubusercontent.com/caarlos0/dotfiles/master/script/install)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mattmahn/dotfiles/master/script/install)"
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
