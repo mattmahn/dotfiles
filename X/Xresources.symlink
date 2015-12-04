@@ -1,0 +1,108 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! rxvt-unicode terminal emulaotor settigns
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Set transparency for urxvt
+! The following two lines are for "true-transparency"
+!URxvt.depth: 32
+!URxvt.background: rgba 0000/0000/0000/eeee
+
+! Native Transparency
+URxvt*.transparent: true
+!URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 20
+
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: plain
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+! enable this if using a patched urxvt version with better wheel scrolling
+!URxvt.secondaryWheel: 1
+
+*font: xft:Hack:size=10
+URxvt.letterSpace: -1
+
+!*font: -*-uushi-medium-r-normal-*-12-*-*-*-*-*-*-*
+!*font: -*-gohufont-medium-*-*-*-14-*-100-100-c-*-iso10646-*
+
+! Enable clickable URLs
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher
+URxvt.url-launcher: google-chrome-stable
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:active
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.matcher.button: 1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Colors
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Background color
+*background:	#0d1926
+! Font color
+*foreground:	#d9e6f2
+! Other colors
+*color0:	#000000
+*color1:	#b87a7a
+*color2:	#7ab87a
+*color3:	#b8b87a
+*color4:	#7a7ab8
+*color5:	#b87ab8
+*color6:	#7ab8b8
+*color7:	#d9d9d9
+*color8:	#262626
+*color9:	#dbbdbd
+*color10:	#bddbbd
+*color11:	#dbdbbd
+*color12:	#bdbddb
+*color13:	#dbbddb
+*color14:	#bddbdb
+*color15:	#ffffff
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Rofi application switcher settings
+! http://davedavenport.github.io/rofi
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+rofi.switchers:            window,run,ssh
+rofi.opacity:              85
+rofi.width:                100
+rofi.lines:                7
+rofi.columns:              2
+rofi.font:                 mono 11
+rofi.fg:                   #e5dbcf
+rofi.bg:                   #0f3b5f
+rofi.hlfg:                 #0f3b5f
+rofi.hlbg:                 #cc9752
+rofi.bc:                   #cc9752
+rofi.bw:                   2
+rofi.location:             6
+rofi.padding:              5
+rofi.yoffset:              0
+rofi.xoffset:              0
+rofi.fixed-num-lines:      false
+rofi.hmode:                false
+rofi.terminal:             x-terminal-emulator
+rofi.ssh-client:           ssh
+rofi.ssh-command:          {terminal} -e {ssh-client} {host}
+rofi.run-command:          {cmd}
+rofi.run-list-command:
+rofi.run-shell-command:    {terminal} -e {cmd}
+rofi.disable-history:      false
+rofi.levenshtein-sort:     false
+rofi.case-sensitive:       false
+rofi.key:                  F12
+rofi.rkey:                 mod1+F2
+rofi.skey:                 mod1+F3
+rofi.sidebar-mode:         false
+rofi.lazy-filter-limit:    5000
+
