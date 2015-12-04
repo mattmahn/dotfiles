@@ -1,47 +1,44 @@
-# Sample gitconfig
-#
-# You probably want to change the [user] section here since you are not me.
 [user]
     name = AUTHORNAME
     email = AUTHOREMAIL
-    helper = GIT_CREDENTIAL_HELPER
+    helper = cache
 [alias]
-    co                = checkout
-    promote           = !$ZSH/bin/git-promote
-    wtf               = !$ZSH/bin/git-wtf
-    unpushed-st       = !$ZSH/bin/git-unpushed-stat
-    nuke              = !$ZSH/bin/git-nuke
-    count             = shortlog -sn
-    lc                = !$ZSH/bin/git-add-rm-line-count
-    g                 = grep --break --heading --line-number
-    gi                = grep --break --heading --line-number -i
+    add-upstream      = !zsh -ic add-upstream
+    br                = branch
     changed           = show --pretty=\"format:\" --name-only
-    sync              = !zsh -ic git-sync
+    ci                = commit
+    cmsg              = commit -m
+    co                = checkout
+    count             = shortlog -sn
     cp-branch-name    = !git rev-parse --abbrev-ref HEAD | pbcopy
     delete-local-merged = !zsh -ic git-delete-local-merged
-    add-upstream      = !zsh -ic add-upstream
+    df                = diff
+    g                 = grep --break --heading --line-number
+    gi                = grep --break --heading --line-number -i
+    lc                = !$ZSH/bin/git-add-rm-line-count
+    nuke              = !$ZSH/bin/git-nuke
+    promote           = !$ZSH/bin/git-promote
+    standup           = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --since yesterday --author matt
+    sync              = !zsh -ic git-sync
+    unpushed-st       = !$ZSH/bin/git-unpushed-stat
+    wtf               = !$ZSH/bin/git-wtf
+[apply]
+    whitespace = fix
 [color]
-    diff    = auto
-    status  = auto
     branch  = auto
+    diff    = auto
+    grep    = true
+    status  = auto
     ui      = true
+[commit]
+    template = ~/.dotfiles/git/template.txt
 [core]
+    autocrlf          = input
+    compression       = -1
     excludesfile      = ~/.gitignore
     editor            = vim
-    compression       = -1
-    autocrlf          = input
     whitespace        = trailing-space,space-before-tab
     precomposeunicode = true
-[apply]
-    whitespace = nowarn
-[help]
-    autocorrect = 1
-[merge]
-    tool = diffmerge
-[mergetool "diffmerge"]
-    cmd           = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-    trustExitCode = true
-    keepBackup    = false
 [diff]
     tool = diffmerge
 [difftool "diffmerge"]
@@ -51,7 +48,11 @@
 [grep]
     extendRegexp = true
     lineNumber   = true
+[help]
+    autocorrect = 10
+[merge]
+    tool = meld
+[mergetool]
+    tool = meld
 [push]
     default = simple
-[commit]
-  template = ~/.dotfiles/git/template.txt

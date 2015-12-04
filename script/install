@@ -6,6 +6,8 @@ set -eo pipefail
 install_pkg() {
   if test "$(which apt-get)"; then
     sudo apt-get install -y "$@"
+  elif test "$(which pacman)"; then
+    sudo pacman -S "$@"
   fi
 }
 
@@ -23,7 +25,7 @@ main() {
     exit 1
   fi
   check_dependencies
-  git clone --recursive --depth=50 https://github.com/caarlos0/dotfiles ~/.dotfiles
+  git clone --recursive https://github.com/mattmahn/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   bash script/bootstrap
   chsh -s "$(which zsh)"
