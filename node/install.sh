@@ -1,3 +1,6 @@
 #!/bin/sh
-[ "$(uname -s)" != "Darwin" ] && exit 0
-brew install node
+if [ "$(uname -s)" = "Darwin" ]; then
+  brew install node
+elif test ! "$(which pacman)"; then
+  sudo pacman -S nodejs npm
+fi
