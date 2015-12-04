@@ -2,7 +2,7 @@
 if [ "$(uname -s)" = "Darwin" ]; then
   brew cask install font-hack
 elif test ! "$(which pacman)"; then
-  sudo pacman -S ttf-hack
+  sudo pacman -S ttf-hack ttf-linux-libertine
 else
   FONTS_FOLDER="$HOME/.fonts"
   mkdir -p "$FONTS_FOLDER"
