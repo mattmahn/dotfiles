@@ -1,5 +1,10 @@
 #!/bin/sh
-[ "$(uname -s)" = "Darwin" ] && brew cask install atom
+if [ "$(uname -s)" = "Darwin" ]; then
+  brew cask install atom
+elif test "$(which yaourt)"; then
+  yaourt -S atom-editor
+fi
+
 apm install \
     atom-beautify \
     atom-justify \
