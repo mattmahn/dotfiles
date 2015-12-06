@@ -26,7 +26,8 @@ URxvt.secondaryScroll: 0
 ! enable this if using a patched urxvt version with better wheel scrolling
 !URxvt.secondaryWheel: 1
 
-*font: xft:Hack:size=10
+!*font: xft:Hack:size=10
+*font: xft:Hermit:size=10
 URxvt.letterSpace: -1
 
 !*font: -*-uushi-medium-r-normal-*-12-*-*-*-*-*-*-*
