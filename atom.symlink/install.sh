@@ -2,7 +2,7 @@
 if [ "$(uname -s)" = "Darwin" ]; then
   brew cask install atom
 elif test "$(which yaourt)"; then
-  yaourt -S atom-editor
+  yaourt -S --noconfirm atom-editor
 fi
 
 apm install \
