@@ -186,4 +186,13 @@ bindsym XF86MonBrightnessDown exec ~/.i3/brightness 0
 # Enable the calculator hardware button
 bindsym XF86Calculator exec gnome-calculator
 
+# Make floating windows that you'd think would be foating windows,
+# floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+
 # vim:filetype=i3
