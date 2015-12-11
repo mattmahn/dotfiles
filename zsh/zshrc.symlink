@@ -35,3 +35,6 @@ unset config_files
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 [[ -a ~/.localrc ]] && source ~/.localrc
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
