@@ -1,3 +1,4 @@
+rimraf/k
 caarlos0/jvm
 caarlos0/zsh-mkc
 mafredri/zsh-async
