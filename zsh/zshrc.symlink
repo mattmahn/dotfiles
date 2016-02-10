@@ -5,6 +5,10 @@ export ZSH=$HOME/.dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/code
 
+# make sure the system knows how I like to edit
+export EDITOR=vim
+export VISUAL=vim
+
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/*/*.zsh)
