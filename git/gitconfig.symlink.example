@@ -1,34 +1,34 @@
+# Sample gitconfig
+#
+# You probably want to change the [user] section here since you are not me.
 [user]
-    name = AUTHORNAME
-    email = AUTHOREMAIL
-    helper = cache
+    name    = AUTHORNAME
+    email   = AUTHOREMAIL
+    helper  = GIT_CREDENTIAL_HELPER
 [alias]
-    add-upstream      = !zsh -ic add-upstream
-    br                = branch
-    changed           = show --pretty=\"format:\" --name-only
-    ci                = commit
-    cmsg              = commit -m
-    co                = checkout
-    count             = shortlog -sn
-    cp-branch-name    = !git rev-parse --abbrev-ref HEAD | pbcopy
+    co                  = checkout
+    promote             = !$ZSH/bin/git-promote
+    wtf                 = !$ZSH/bin/git-wtf
+    unpushed-st         = !$ZSH/bin/git-unpushed-stat
+    nuke                = !$ZSH/bin/git-nuke
+    count               = shortlog -sn
+    lc                  = !$ZSH/bin/git-add-rm-line-count
+    g                   = grep --break --heading --line-number
+    gi                  = grep --break --heading --line-number -i
+    changed             = show --pretty=\"format:\" --name-only
+    sync                = !zsh -ic git-sync
+    cp-branch-name      = !git rev-parse --abbrev-ref HEAD | pbcopy
     delete-local-merged = !zsh -ic git-delete-local-merged
-    df                = diff
-    g                 = grep --break --heading --line-number
-    gi                = grep --break --heading --line-number -i
-    lc                = !$ZSH/bin/git-add-rm-line-count
-    nuke              = !$ZSH/bin/git-nuke
-    promote           = !$ZSH/bin/git-promote
-    standup           = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --since yesterday --author matt
-    sync              = !zsh -ic git-sync
-    unpushed-st       = !$ZSH/bin/git-unpushed-stat
-    wtf               = !$ZSH/bin/git-wtf
-[apply]
-    whitespace = fix
+    add-upstream        = !zsh -ic \"add-upstream $*\"
+    sync                = !zsh -ic git-sync
+    fm                  = !zsh -ic \"git-fetch-merge $*\"
+    pr                  = !zsh -ic \"open-pr $*\"
 [color]
     branch  = auto
     diff    = auto
     grep    = true
     status  = auto
+    branch  = auto
     ui      = true
 [commit]
     template = ~/.dotfiles/git/template.txt
@@ -39,6 +39,8 @@
     editor            = vim
     whitespace        = trailing-space,space-before-tab
     precomposeunicode = true
+[apply]
+    whitespace = nowarn
 [diff]
     tool = diffmerge
 [difftool "diffmerge"]

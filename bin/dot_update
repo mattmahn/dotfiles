@@ -1,36 +1,33 @@
-#!/bin/zsh
+#!/bin/sh
 #
 # dot_update
 #
-# `dot_update` handles installation, updates, things like that. Run it periodically
-# to make sure you're on the latest and greatest.
-main() {
-  cd ~/.dotfiles
-  # shellcheck disable=SC2155
-  export ZSH="$(pwd)"
-  echo "Updating dotfiles..."
-  git pull origin master
-  git submodule update
+# `dot_update` handles installation, updates, things like that. Run it
+# periodically to make sure you're on the latest and greatest.
+export ZSH="$HOME/.dotfiles"
 
-  echo "Updating antibody plugins..."
-  ./antibody/install.sh
-  . ./antibody/antibody/antibody.zsh
+# Set OS defaults
+echo "› set OS defaults"
+"$ZSH/osx/set-defaults.sh"
+"$ZSH/linux/set-defaults.sh"
+
+# Install homebrew
+echo "› homebrew/install.sh"
+"$ZSH/homebrew/install.sh"
+# shellcheck disable=SC1090
+. "$ZSH/homebrew/path.zsh"
+
+# Upgrade homebrew
+echo "› brew update"
+brew update
+
+# Install software
+echo "› $ZSH/script/install"
+"$ZSH/script/install"
+
+if [ -n "$ZSH_VERSION" ]; then
+  echo "› antibody update"
+  # shellcheck disable=SC1090
+  . "$ZSH/shellcheck/path.zsh"
   antibody update
-
-  echo "Setting OSX/Gnome defaults..."
-  ./osx/set-defaults.sh
-  ./linux/set-defaults.sh
-
-  echo "Running all install files..."
-  # run homebrew installer first
-  ./homebrew/install.sh
-
-  # find the installers and run them iteratively
-  find . -name install.sh | egrep -v "homebrew|build" | while read installer
-  do
-    echo "$ ${installer}..."
-    sh -c "$installer" >> /tmp/dotfiles-dot
-  done
-}
-
-main
+fi
