@@ -9,7 +9,7 @@
   core:
     hideGitIgnoredFiles: true
     autoHideMenuBar: true
-    projectHome: "~/Code/"
+    projectHome: "~/code/"
     disabledPackages: [
       "wrap-guide"
     ]

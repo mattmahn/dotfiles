@@ -2,8 +2,8 @@
 
 # only install if not already installed
 if test ! "$(which atom)"; then
-  if [ "$(uname -s)" = "Darwin" ]; then
-    brew cask install atom
+  if test ! "$(which apm)"; then
+    return 0
   elif test "$(which yaourt)"; then
     yaourt -S --noconfirm atom-editor
   fi
