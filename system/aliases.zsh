@@ -15,6 +15,7 @@ else
   alias ll="ls -l --color"
   alias la="ls -A --color"
 fi
+alias k="k -Ah"
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"
 alias less="less -r"
