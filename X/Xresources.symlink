@@ -46,27 +46,34 @@ URxvt.matcher.button: 1
 ! Colors
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! Background color
-*background:	#0d1926
-! Font color
-*foreground:	#d9e6f2
-! Other colors
-*color0:	#000000
-*color1:	#b87a7a
-*color2:	#7ab87a
-*color3:	#b8b87a
-*color4:	#7a7ab8
-*color5:	#b87ab8
-*color6:	#7ab8b8
-*color7:	#d9d9d9
-*color8:	#262626
-*color9:	#dbbdbd
-*color10:	#bddbbd
-*color11:	#dbdbbd
-*color12:	#bdbddb
-*color13:	#dbbddb
-*color14:	#bddbdb
-*color15:	#ffffff
+! special
+*.foreground:   #ffffff
+*.background:   #161616
+*.cursorColor:  #ffffff
+! black
+*.color0:       #222222
+*.color8:       #666666
+! red
+*.color1:       #e84f4f
+*.color9:       #d23d3d
+! green
+*.color2:       #b7ce42
+*.color10:      #bde077
+! yellow
+*.color3:       #fea63c
+*.color11:      #ffe863
+! blue
+*.color4:       #66aabb
+*.color12:      #aaccbb
+! magenta
+*.color5:       #b7416e
+*.color13:      #e16a98
+! cyan
+*.color6:       #6d878d
+*.color14:      #42717b
+! white
+*.color7:       #dddddd
+*.color15:      #cccccc
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
