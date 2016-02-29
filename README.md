@@ -61,11 +61,11 @@ ran at bootstrap phase.
 
 ## plugins
 
-This project uses the [pure][pure] prompt (which is awesome!) and some other
+This project uses the [lean][lean] prompt (which is awesome!) and some other
 [zsh plugins](/antibody/bundles.txt). All of them managed by [Antibody][antibody],
 a faster and simpler Antigen written in Go.
 
-[pure]: https://github.com/sindresorhus/pure
+[lean]: https://github.com/miekg/lean
 [antibody]: https://github.com/caarlos0/antibody
 [jvm]: https://github.com/caarlos0/jvm
 [zsh-pg]: https://github.com/caarlos0/zsh-pg
