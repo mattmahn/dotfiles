@@ -33,7 +33,7 @@
 [commit]
     template = ~/.dotfiles/git/template.txt
 [core]
-    autocrlf          = input
+    autocrlf          = true
     compression       = -1
     excludesfile      = ~/.gitignore
     editor            = vim
