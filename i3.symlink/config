@@ -5,10 +5,6 @@ set $mod Mod4
 # is used in the bar {} block below. ISO 10646 = Unicode
 font pango:Hack 10
 
-# Gaps requires window titlebars to be disabled
-# A non-zero value can be used as long as pixel-style borders are used
-for_window [class="^.*"] border pixel 0
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -22,14 +18,6 @@ bindsym $mod+Shift+q kill
 # Start dmenu
 bindsym $mod+d exec dmenu_run
 exec --no-startup-id rofi
-
-# Global gaps size for all workspaces
-# NOTE: outer gaps are added to inner gaps
-#   That is, `gaps outer all set 0` will eliminate outer gaps iff inner gaps are not set.
-gaps inner 5
-gaps outer 5
-# Turn gaps on if there is only one container on the workspace
-smart_gaps on
 
 # Change focus
 bindsym $mod+j focus left
@@ -128,45 +116,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Press `$mode+Shift+g` to enter gaps mode. Then choose between `o` and `i`
-# for modifying outer/inner gaps. In this mode, press `+`/`-` (in-/decrement
-# for current workspace) or `0` (remove gaps from current workspace). Pressing
-# `Shift` with these will change the gaps for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-mode "$mode_gaps" {
-    bindsym o      mode "$mode_gaps_outer"
-    bindsym i      mode "$mode_gaps_inner"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-    bindsym plus  gaps inner current plus 5
-    bindsym minus gaps inner current minus 5
-    bindsym 0     gaps inner current set 0
-
-    bindsym Shift+plus   gaps inner all plus 5
-    bindsym Shift+minnus gaps inner all minus 5
-    bindsym Shift+0      gaps inner all set 0
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-    bindsym plus  gaps outer current plus 5
-    bindsym minus gaps outer current minus 5
-    bindsym 0     gaps outer current set 0
-
-    bindsym Shift+plus  gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0     gaps inner all set 0
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
     position top
@@ -180,11 +129,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Enable the brightness control key on the keyboard. See http://goo.gl/PFyTRs
-bindsym XF86MonBrightnessUp exec ~/.i3/brightness 1
-bindsym XF86MonBrightnessDown exec ~/.i3/brightness 0
-
-# Enable the calculator hardware button
-bindsym XF86Calculator exec gnome-calculator
+#bindsym XF86MonBrightnessUp exec ~/.i3/brightness 1
+#bindsym XF86MonBrightnessDown exec ~/.i3/brightness 0
 
 # Take screenshot. `Shift` for screenshot of window / rectange region.
 bindsym --release Print exec scrot ~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
