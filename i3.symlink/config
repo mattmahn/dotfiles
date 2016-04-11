@@ -139,6 +139,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym --release Print exec scrot ~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym --release Shift+Print exec scrot -s ~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 
+# Enable sleep keyboard button
+bindsym XF86Suspend exec systemctl suspend
+bindsym XF86Sleep exec systemctl suspend
+
 # Make floating windows that you'd think would be foating windows,
 # floating windows
 for_window [window_role="pop-up"] floating enable
