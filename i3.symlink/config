@@ -22,6 +22,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 exec --no-startup-id rofi
 
+# Remove container borders at screen edge
+hide_edge_borders both
+
 # Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
