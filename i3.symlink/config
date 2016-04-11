@@ -128,9 +128,9 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # This enables the mute button
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Enable the brightness control key on the keyboard. See http://goo.gl/PFyTRs
-#bindsym XF86MonBrightnessUp exec ~/.i3/brightness 1
-#bindsym XF86MonBrightnessDown exec ~/.i3/brightness 0
+# Enable the brightness control key on the keyboard. <strike>See http://goo.gl/PFyTRs</strike>
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 # Take screenshot. `Shift` for screenshot of window / rectange region.
 bindsym --release Print exec scrot ~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
