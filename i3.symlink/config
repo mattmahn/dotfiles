@@ -1,3 +1,6 @@
+# Fix the DPI that is only broken in i3
+exec --no-startup-id xrandr --dpi 96x96
+
 # Set modifier key: Alt == Mod1; Win/Super == Mod4
 set $mod Mod4
 
