@@ -1,0 +1,9 @@
+#!/bin/sh
+
+xrandr --dpi 96x96
+
+# set background
+feh --bg-fill ~/Dropbox/Photos/Wallpapers/SpaceX\ SES-9\ launch.jpg
+
+compton -b
+
