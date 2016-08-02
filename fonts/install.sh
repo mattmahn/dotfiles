@@ -1,6 +1,6 @@
 #!/bin/bash
 if test "$(which pacman)"; then
-  sudo pacman -S --noconfirm --needed ttf-hack ttf-linux-libertine
+  sudo pacman -S --noconfirm --needed ttf-hack ttf-linux-libertine terminus-font
   yaourt -S --noconfirm otf-hermit
 elif [ "$(uname -s)" != "Darwin" ]; then
   FONTS_FOLDER="$HOME/.fonts"

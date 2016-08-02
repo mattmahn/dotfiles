@@ -9,5 +9,5 @@ compton &>/dev/null &
 redshift -c ~/.config/redshift.conf &>/dev/null &
 
 # set background
-feh --bg-fill ~/Dropbox/Photos/Wallpapers/SpaceX\ SES-9\ launch.jpg &
+[[ -f ~/.fehbg ]] && sh ~/.fehbg &
 
