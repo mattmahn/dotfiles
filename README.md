@@ -67,15 +67,6 @@ a faster and simpler Antigen written in Go.
 
 [lean]: https://github.com/miekg/lean
 [antibody]: https://github.com/caarlos0/antibody
-[jvm]: https://github.com/caarlos0/jvm
-[zsh-pg]: https://github.com/caarlos0/zsh-pg
-[alias-tips]: https://github.com/djui/alias-tips
-[zsh-mkc]: https://github.com/caarlos0/zsh-mkc
-[zsh-git-sync]: https://github.com/caarlos0/zsh-git-sync
-[zsh-completions]: https://github.com/zsh-users/zsh-completions
-[zsh-open-pr]: https://github.com/caarlos0/zsh-open-pr
-[zsh-syntax-highlighting]: https://github.com/zsh-users/zsh-syntax-highlighting
-[zsh-history-substring-search]: https://github.com/zsh-users/zsh-history-substring-search
 
 ## install
 
