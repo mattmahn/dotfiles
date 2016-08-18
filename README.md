@@ -74,7 +74,7 @@ Run this:
 
 ```console
 $ ruby -v # you will need ruby 2.0+ for homebrew/linuxbrew
-$ git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/mattmahn/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ script/bootstrap
 $ chsh -s $(which zsh)
@@ -101,8 +101,8 @@ said, I do use this as *my* dotfiles, so there's a good chance I may break
 something if I forget to make a check for a dependency.
 
 If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/caarlos0/dotfiles/issues) on this repository
-and I'd love to get it fixed for you!
+[open an issue](https://github.com/caarlos0/dotfiles/issues) on
+the forked repository and I'd love to get it fixed for you!
 
 ## contributing
 
@@ -111,7 +111,7 @@ checked/linted with [Shellcheck](https://github.com/koalaman/shellcheck).
 
 ## thanks
 
-I forked [Holman's](http://github.com/holman) excellent
+I forked [caarlos0's](https://github.com/dotfiles) [Holman's](http://github.com/holman) excellent
 [dotfiles](http://github.com/holman/dotfiles) and tweaked it to fit my
 taste. I have also copied one thing or another from other people, so,
 thanks everyone!
