@@ -45,11 +45,14 @@ setup_gitconfig () {
     read -r -e git_authorname
     user ' - What is your github author email?'
     read -r -e git_authoremail
+    user ' - What is your GPG keyid? (gpg -k --keyid-format SHORT)'
+    read -r -e git_gpgkeyid
 
     sed \
       -e "s/AUTHORNAME/$git_authorname/g" \
       -e "s/AUTHOREMAIL/$git_authoremail/g" \
       -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" \
+      -e "s/GPGKEYID/$git_gpgkeyid/g" \
       git/gitconfig.symlink.example > git/gitconfig.symlink
 
     success 'gitconfig'
