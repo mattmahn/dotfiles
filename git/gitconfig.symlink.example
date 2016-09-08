@@ -2,9 +2,10 @@
 #
 # You probably want to change the [user] section here since you are not me.
 [user]
-    name    = AUTHORNAME
-    email   = AUTHOREMAIL
-    helper  = GIT_CREDENTIAL_HELPER
+    name       = AUTHORNAME
+    email      = AUTHOREMAIL
+    helper     = GIT_CREDENTIAL_HELPER
+    signingkey = GPGKEYID
 [alias]
     co                  = checkout
     promote             = !$ZSH/bin/git-promote
@@ -13,10 +14,10 @@
     nuke                = !$ZSH/bin/git-nuke
     count               = shortlog -sn
     lc                  = !$ZSH/bin/git-add-rm-line-count
+    logs                = log --pretty=\"format:%h %G? %aN  %s\"
     g                   = grep --break --heading --line-number
     gi                  = grep --break --heading --line-number -i
     changed             = show --pretty=\"format:\" --name-only
-    sync                = !zsh -ic git-sync
     cp-branch-name      = !git rev-parse --abbrev-ref HEAD | pbcopy
     delete-local-merged = !zsh -ic git-delete-local-merged
     add-upstream        = !zsh -ic \"add-upstream $*\"
