@@ -19,6 +19,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 exec --no-startup-id rofi
 
+# lockscreen (Super+Alt+l)
+bindsym Mod1+Mod4+l exec ~/.dotfiles/i3.symlink/screenlock.sh
+
 # Remove container borders at screen edge
 hide_edge_borders both
 
