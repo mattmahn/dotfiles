@@ -24,6 +24,7 @@
     sync                = !zsh -ic git-sync
     fm                  = !zsh -ic \"git-fetch-merge $*\"
     pr                  = !zsh -ic \"open-pr $*\"
+    yolo                = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 [color]
     branch  = auto
     diff    = auto
