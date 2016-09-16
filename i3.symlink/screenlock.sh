@@ -3,9 +3,9 @@
 readonly BG_IMAGE="/tmp/lockscreen_background.png"
 
 # take screenshot
-scrot $BG_IMAGE
+scrot --silent $BG_IMAGE
 # blur screenshot
-convert "$BG_IMAGE" -blur 0x16 "/tmp/lockscreen_background_blur.png"
+convert "$BG_IMAGE" -blur 0x12 "/tmp/lockscreen_background_blur.png"
 rm $BG_IMAGE
 
 # lock
