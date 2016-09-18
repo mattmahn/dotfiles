@@ -1,0 +1,6 @@
+# ignore everything that the system automtically puts in ~/.config, but...
+/*
+
+# don't ignore the following files:
+!/i3status
+!redshift.conf
