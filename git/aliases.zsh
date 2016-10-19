@@ -19,3 +19,7 @@ alias gs='git status -sb'
 gi() {
   curl -s "https://www.gitignore.io/api/$*";
 }
+
+gitall() {
+  find . -maxdepth 1 -type d -exec git --git-dir={}/.git --work-tree=$PWD/{} "$@" \;
+}
