@@ -123,7 +123,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-    position top
+    position bottom
     status_command i3status -c ~/.config/i3status/config
 }
 
