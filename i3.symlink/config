@@ -16,7 +16,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # Start dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec ~/.dotfiles/i3.symlink/run-rofi.sh
 
 # lockscreen (Super+Alt+l)
 bindsym Mod1+Mod4+l exec ~/.dotfiles/i3.symlink/screenlock.sh
