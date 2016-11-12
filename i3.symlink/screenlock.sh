@@ -1,12 +1,22 @@
 #!/bin/sh
 
-readonly BG_IMAGE="/tmp/lockscreen_background.png"
+readonly BG_IMAGE=$(mktemp --suffix '.png')
+readonly BLUR_AMOUNT=15
+readonly RESOLUTION=$(xdpyinfo | awk '/dimensions/{print $2}')
+readonly DPMS_VALUES=$(xset q | awk 'BEGIN{FPAT="[0-9]+"} /Standby.*Suspend.*Off/{print $1, $2, $3}')
+readonly SCREEN_TIMEOUT=5
 
-# take screenshot
-scrot --silent $BG_IMAGE
-# blur screenshot
-convert "$BG_IMAGE" -blur 0x12 "/tmp/lockscreen_background_blur.png"
-rm $BG_IMAGE
+clean_up() {
+  rm -f $BG_IMAGE
+  xset dpms $DPMS_VALUES
+}
 
+trap clean_up SIGHUP SIGINT SIGTERM
+
+# take & blur screenshot
+ffmpeg -loglevel quiet -y -s $RESOLUTION -f x11grab -i $DISPLAY -vframes 1 -vf "gblur=sigma=$BLUR_AMOUNT" $BG_IMAGE
+# turn off monitor after inactivity
+xset +dpms dpms $SCREEN_TIMEOUT $SCREEN_TIMEOUT $SCREEN_TIMEOUT
 # lock
-i3lock --inactivity-timeout=10 --image="/tmp/lockscreen_background_blur.png"
+i3lock -I $SCREEN_TIMEOUT -nei $BG_IMAGE
+clean_up
