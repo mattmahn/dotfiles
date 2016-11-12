@@ -10,7 +10,7 @@ URxvt.background: rgba 0000/0000/0000/eeee
 ! Native Transparency
 URxvt*.transparent: true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 35
+URxvt*.shading: 45
 
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 URxvt.scrollstyle: plain
@@ -46,34 +46,7 @@ URxvt.matcher.button: 1
 ! Colors
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! special
-*.foreground:   #ffffff
-*.background:   #161616
-*.cursorColor:  #ffffff
-! black
-*.color0:       #222222
-*.color8:       #666666
-! red
-*.color1:       #e84f4f
-*.color9:       #d23d3d
-! green
-*.color2:       #b7ce42
-*.color10:      #bde077
-! yellow
-*.color3:       #fea63c
-*.color11:      #ffe863
-! blue
-*.color4:       #66aabb
-*.color12:      #aaccbb
-! magenta
-*.color5:       #b7416e
-*.color13:      #e16a98
-! cyan
-*.color6:       #6d878d
-*.color14:      #42717b
-! white
-*.color7:       #dddddd
-*.color15:      #cccccc
+#include </home/matt/.dotfiles/X/colors/sourcerer.Xcolors>
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
