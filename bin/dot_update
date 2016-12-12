@@ -4,30 +4,36 @@
 #
 # `dot_update` handles installation, updates, things like that. Run it
 # periodically to make sure you're on the latest and greatest.
-export ZSH="$HOME/.dotfiles"
+export DOTFILES="$HOME/.dotfiles"
+cd "$DOTFILES" || exit 1
 
-# Set OS defaults
-echo "› set OS defaults"
-"$ZSH/osx/set-defaults.sh"
-"$ZSH/linux/set-defaults.sh"
+# fixes PATH (we could be running from the crontab)
+PATH="$(command -p getconf PATH):/usr/local/bin"
 
-# Install homebrew
-echo "› homebrew/install.sh"
-"$ZSH/homebrew/install.sh"
+# load custom config if any
 # shellcheck disable=SC1090
-. "$ZSH/homebrew/path.zsh"
+[ -f ~/.localrc ] && . ~/.localrc
 
-# Upgrade homebrew
-echo "› brew update"
-brew update
+# ssh would not work under cron, add a https one
+echo "› setting up update channel"
+git remote add updates https://github.com/caarlos0/dotfiles.git 2> /dev/null
 
-# Install software
-echo "› $ZSH/script/install"
-"$ZSH/script/install"
+# Update repo
+echo "› git update"
+git pull --rebase --stat updates "$(git rev-parse --abbrev-ref HEAD)"
 
-if [ -n "$ZSH_VERSION" ]; then
+# Update submodules
+echo "› submodules update"
+git submodule update --init --recursive --remote --merge --quiet
+
+# Run all installs
+echo "› $DOTFILES/script/install"
+"$DOTFILES/script/install"
+
+if which antibody >/dev/null 2>&1; then
   echo "› antibody update"
-  # shellcheck disable=SC1090
-  . "$ZSH/shellcheck/path.zsh"
   antibody update
 fi
+
+echo "› registering last update"
+git config --global dotfiles.lastupdate "$(date +%Y%m%d%H%M)"

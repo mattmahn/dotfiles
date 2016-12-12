@@ -1,14 +1,33 @@
 #!/bin/sh
 if [ -d "$HOME/.rbenv" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$PATH:$HOME/.rbenv/bin"
 fi
-# shellcheck disable=SC2039
-if rbenv &>/dev/null; then
-  eval "$(rbenv init -)"
-fi
-if [ -d "$HOME/.gem/ruby/2.2.0" ]; then
-  export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
-fi
-if [ -d "$HOME/.gem/ruby/2.3.0" ]; then
-  export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
-fi
+
+__rbenv_started=0
+
+__rbenv_init() {
+  test $__rbenv_started = 0 && {
+    eval "$(command rbenv init -)"
+    __rbenv_started=1
+  }
+}
+
+rbenv() {
+  __rbenv_init
+  command rbenv "$@"
+}
+
+ruby() {
+  __rbenv_init
+  command ruby "$@"
+}
+
+rake() {
+  __rbenv_init
+  command rake "$@"
+}
+
+bundle() {
+  __rbenv_init
+  command bundle "$@"
+}

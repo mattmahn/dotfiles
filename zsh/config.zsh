@@ -2,9 +2,9 @@
 export LSCOLORS='exfxcxdxbxegedabagacad'
 export CLICOLOR=true
 
-fpath=($ZSH/functions $fpath)
+fpath=($DOTFILES/functions $fpath)
 
-autoload -U "$ZSH"/functions/*(:t)
+autoload -U "$DOTFILES"/functions/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -28,7 +28,8 @@ setopt COMPLETE_IN_WORD
 # adds history
 setopt APPEND_HISTORY
 # adds history incrementally and share it across sessions
-setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 # don't record dupes in history
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
@@ -106,10 +107,3 @@ else
   bindkey "^[3;5~" delete-char
   bindkey "\e[3~" delete-char
 fi
-
-# ignore case
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# menu if nb items > 2
-zstyle ':completion:*' menu select=2
-# list of completers to use
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate

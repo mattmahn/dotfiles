@@ -2,31 +2,30 @@
 # grc overides for ls
 #   Made possible through contributions from generous benefactors like
 #   `brew install coreutils`
-alias wtf="imgcat ~/.dotfiles/imgs/wtf.gif"
-# shellcheck disable=SC2039
-if gls &>/dev/null; then
+if which gls >/dev/null 2>&1; then
   alias ls="gls -F --color"
-  alias l="gls -lAh --color"
-  alias ll="gls -l --color"
-  alias la="gls -A --color"
+elif [ "$(uname -s)" != "Darwin" ]; then
+  alias ls="ls -F --color"
 else
   alias ls="ls -F --color"
-  alias l="ls -lAh --color"
-  alias ll="ls -l --color"
-  alias la="ls -A --color"
 fi
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la="ls -A"
 alias k="k -Ah"
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"
 alias less="less -r"
 
-if [ -z "$(command -v pbcopy)" ]; then
-  if [ -n "$(command -v xclip)" ]; then
-    alias pbcopy="xclip -selection clipboard"
-    alias pbpaste="xclip -selection clipboard -o"
-  elif [ -n "$(command -v xsel)" ]; then
-    alias pbcopy="xsel --clipboard --input"
-    alias pbpaste="xsel --clipboard --output"
+if [ "$(uname -s)" != "Darwin" ]; then
+  if [ -z "$(command -v pbcopy)" ]; then
+    if [ -n "$(command -v xclip)" ]; then
+      alias pbcopy="xclip -selection clipboard"
+      alias pbpaste="xclip -selection clipboard -o"
+    elif [ -n "$(command -v xsel)" ]; then
+      alias pbcopy="xsel --clipboard --input"
+      alias pbpaste="xsel --clipboard --output"
+    fi
   fi
 fi
 

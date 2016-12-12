@@ -10,19 +10,24 @@ cp -rf dotfiles ~/.dotfiles
 cd ~/.dotfiles
 
 # setup git credentials
-git_credential='cache'
-if [ "$(uname -s)" = "Darwin" ]; then
-  git_credential='osxkeychain'
-fi
-sed \
-  -e "s/AUTHORNAME/dotfiles-demo/g" \
-  -e "s/AUTHOREMAIL/dotfiles-demo/g" \
-  -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" \
-  ./git/gitconfig.symlink.example > ./git/gitconfig.symlink
+git config --global user.name "dotfiles demo"
+git config --global user.email "dotfiles@demo.com"
 
 # bootstrap the mighty
-./script/bootstrap --override-all
+./script/bootstrap
 
 # load zshrc and check if antibody is working
 source ~/.zshrc
-antibody list
+
+test $(antibody list | wc -l) -gt 10 || {
+  echo "expecting 10+ bundles loaded" >&2
+  exit 1
+}
+
+test -s ~/.zcompdump || {
+  echo "zcompdump file is empty" >&2
+  exit 1
+}
+
+# check if a random plugin is working (meaning that the bundles were loaded)
+jvm
