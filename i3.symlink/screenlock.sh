@@ -1,7 +1,7 @@
 #!/bin/sh
 
 readonly BG_IMAGE=$(mktemp --suffix '.png')
-readonly BLUR_AMOUNT=15
+readonly BLUR_AMOUNT=25
 readonly RESOLUTION=$(xdpyinfo | awk '/dimensions/{print $2}')
 readonly DPMS_VALUES=$(xset q | awk 'BEGIN{FPAT="[0-9]+"} /Standby.*Suspend.*Off/{print $1, $2, $3}')
 readonly SCREEN_TIMEOUT=5
