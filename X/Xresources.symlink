@@ -2,7 +2,7 @@
 ! rxvt-unicode terminal emulaotor settigns
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#define TERM_FONT xft:Terminus:size=10
+#define TERM_FONT xft:Hack:size=10
 
 ! Set transparency for urxvt
 ! The following two lines are for "true-transparency"
@@ -64,6 +64,6 @@ rofi.color-window: ROFI_BG, ROFI_BG, ROFI_BG
 rofi.color-normal: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
 rofi.color-active: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
 rofi.color-urgent: ROFI_UG, ROFI_BG, ROFI_UG, ROFI_UG, ROFI_BG
-rofi.font: Terminus 12
+rofi.font: Hack 12
 rofi.padding: 200
 rofi.separator-style: none
