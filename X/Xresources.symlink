@@ -2,13 +2,12 @@
 ! rxvt-unicode terminal emulaotor settigns
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#define TERM_FONT xft:Hack:size=10
+#define TERM_FONT xft:Inconsolata:size=10
 
 ! Set transparency for urxvt
 ! The following two lines are for "true-transparency"
 URxvt.depth: 32
 URxvt.background: rgba 0000/0000/0000/eeee
-
 ! Native Transparency
 URxvt*.transparent: true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
@@ -31,17 +30,17 @@ URxvt.secondaryScroll: 0
 *font: TERM_FONT
 URxvt.letterSpace: 0
 
-!*font: -*-uushi-medium-r-normal-*-12-*-*-*-*-*-*-*
-!*font: -*-gohufont-medium-*-*-*-14-*-100-100-c-*-iso10646-*
-
 ! Enable clickable URLs
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,resize-font
 URxvt.url-launcher: google-chrome-stable
 URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:active
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.matcher.button: 1
+! Change font size on the fly (perl-ext-common: resize-font)
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -64,6 +63,6 @@ rofi.color-window: ROFI_BG, ROFI_BG, ROFI_BG
 rofi.color-normal: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
 rofi.color-active: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
 rofi.color-urgent: ROFI_UG, ROFI_BG, ROFI_UG, ROFI_UG, ROFI_BG
-rofi.font: Hack 12
+rofi.font: Inconsolata 14
 rofi.padding: 200
 rofi.separator-style: none

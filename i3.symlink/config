@@ -13,7 +13,7 @@ set_from_resource $white   i3wm.color7 #ffffff
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font pango:Hack 9
+font pango:Inconsolata 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
