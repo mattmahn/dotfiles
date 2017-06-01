@@ -1,12 +1,10 @@
 #!/bin/sh
 
 # only install if not already installed
-if test ! "$(which atom)"; then
-  if test ! "$(which apm)"; then
-    return 0
-  elif test "$(which yaourt)"; then
-    yaourt -S --noconfirm atom-editor
-  fi
+if test ! "$(which atom &>/dev/null)"; then
+  exit 0
+elif test "$(which pacman)"; then
+  sudo pacman -S --noconfirm --needed atom
 fi
 
 if test "$(which apm)"; then

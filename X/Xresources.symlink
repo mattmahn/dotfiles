@@ -5,13 +5,9 @@
 #define TERM_FONT xft:Noto Mono for Powerline:size=8.5
 
 ! Set transparency for urxvt
-! The following two lines are for "true-transparency"
-URxvt.depth: 32
-URxvt.background: rgba 0000/0000/0000/eeee
-! Native Transparency
 URxvt*.transparent: true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 45
+URxvt*.shading: 30
 
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 URxvt.scrollstyle: plain

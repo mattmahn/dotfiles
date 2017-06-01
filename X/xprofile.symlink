@@ -1,8 +1,6 @@
 #!/bin/sh
 
-xrdb -load ~/.Xresources
-
-xrandr --dpi '96x96'
+#xrandr --dpi '96x96'
 
 compton &>/dev/null &
 
@@ -10,4 +8,3 @@ redshift -c ~/.config/redshift.conf &>/dev/null &
 
 # set background
 [[ -f ~/.fehbg ]] && sh ~/.fehbg &
-
