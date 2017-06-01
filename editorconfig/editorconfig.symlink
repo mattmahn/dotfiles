@@ -23,6 +23,9 @@ indent_size = 4
 [*.{html,tex}]
 max_line_length = off
 
+[*.wiki]
+indent_size = 4
+
 [Makefile]
 indent_style = tab
 indent_size = 8
