@@ -42,7 +42,6 @@ For OSX, I recommend:
 Both:
 
 - `diff-so-fancy`: better git difs (you'll need to run `dot_update` to apply it);
-- `fzf`: fuzzy finder, used in `,t` on vim, for example.
 
 ## Further help:
 
