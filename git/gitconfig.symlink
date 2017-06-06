@@ -3,9 +3,9 @@
 # You probably want to change the [user] section here since you are not me.
 [user]
     name       = Matthew Mahnke
-    email      = mahnkem@msoe.edu
+	email = mmahnke18@gmail.com
     helper     = cache
-    signingkey = 0F063E1F
+	signingkey = 3AC28A56
 [alias]
     co                  = checkout
     promote             = !$ZSH/bin/git-promote
@@ -65,3 +65,5 @@
 	lastupdate = 201612162305
 [github]
 	user = mattmahn
+[credential]
+	helper = cache

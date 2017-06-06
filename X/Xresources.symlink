@@ -9,6 +9,7 @@ URxvt*.transparent: true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 30
 
+URxvt.scrollBar: off
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 URxvt.scrollstyle: plain
 

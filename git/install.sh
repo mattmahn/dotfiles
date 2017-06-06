@@ -13,4 +13,6 @@ if which diff-so-fancy > /dev/null 2>&1; then
 fi
 
 # install git-standup
-curl -L https://raw.githubusercontent.com/kamranahmedse/git-standup/master/installer.sh | sudo sh
+if [ yaourt ]; then
+  yaourt -S git-standup-git
+fi

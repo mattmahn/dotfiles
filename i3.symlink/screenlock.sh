@@ -17,6 +17,10 @@ trap clean_up SIGHUP SIGINT SIGTERM
 ffmpeg -loglevel quiet -y -s $RESOLUTION -f x11grab -i $DISPLAY -vframes 1 -vf "gblur=sigma=$BLUR_AMOUNT" $BG_IMAGE
 # turn off monitor after inactivity
 xset +dpms dpms $SCREEN_TIMEOUT $SCREEN_TIMEOUT $SCREEN_TIMEOUT
+# pause notifications
+killall -USR1 dunst
 # lock
 i3lock -I $SCREEN_TIMEOUT -nei $BG_IMAGE
+# resume notifications
+killall -USR2 dunst
 clean_up

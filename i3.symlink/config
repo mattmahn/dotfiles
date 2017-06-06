@@ -1,4 +1,5 @@
 # Set modifier key: Alt == Mod1; Win/Super == Mod4
+set $alt Mod1
 set $mod Mod4
 
 # Get colors from .Xresources
@@ -94,6 +95,10 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# iterate through workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # Move focused contatiner to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -137,6 +142,50 @@ bar {
     status_command i3status -c ~/.config/i3status/config
 }
 
+# disable titlebars for i3-gaps
+for_window [class="^.*"] border pixel 0
+
+gaps inner 10
+gaps outer 0
+
+smart_gaps on
+smart_borders on
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
 # Enable volume keys on the keyboard
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -163,5 +212,14 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_role="dialog"] floating enable
 for_window [window_role="menu"] floating enable
+# Steam Friends list
+for_window [id="0x2200011"] floating enable
+for_window [id="0x2200011"] resize set 265 500
 
-# vim:filetype=i3config
+# awesome terminal dropdown
+exec urxvt -name dropdown -geometry 180x20
+for_window [instance="dropdown" class="URxvt"] floating enable, move absolute position 90 0
+for_window [instance="dropdown" class="URxvt"] move scratchpad
+bindsym $mod+grave [instance="dropdown" class="URxvt"] scratchpad show
+
+# vim: filetype=i3config tw=0
