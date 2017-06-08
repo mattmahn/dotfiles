@@ -1,6 +1,6 @@
 [global]
     # font = Artwiz Lemon 7
-    font = Noto Mono for Powerline 8.5
+    font = Hermit 8
 
     # Allow a small subset of html markup:
     #   <b>bold</b>

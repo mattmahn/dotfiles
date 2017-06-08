@@ -37,7 +37,7 @@ xinput set-prop 13 304 1
 
 [ -f /etc/xprofile ] && source /etc/xprofile
 
-xrandr --dpi '96x96'
+xrandr --dpi '92x92'
 
 [ -f ~/.fehbg ] && sh ~/.fehbg &
 compton &>/dev/null &

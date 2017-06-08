@@ -4,4 +4,5 @@
 # don't ignore the following files:
 !/i3status
 !dust
+!ranger/rifle.conf
 !redshift.conf
