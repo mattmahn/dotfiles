@@ -213,8 +213,7 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_role="dialog"] floating enable
 for_window [window_role="menu"] floating enable
 # Steam Friends list
-for_window [id="0x2200011"] floating enable
-for_window [id="0x2200011"] resize set 265 500
+for_window [class="Steam" title="Friends"] floating enable, resize set 265 500
 
 # awesome terminal dropdown
 exec urxvt -name dropdown -geometry 180x20
