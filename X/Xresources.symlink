@@ -7,8 +7,8 @@
 ! Set transparency for urxvt
 URxvt*.transparent: true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 30
-URxvt*blurRadius: 5
+URxvt*.shading: 50
+URxvt*blurRadius: 15
 
 URxvt.scrollBar: off
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
@@ -39,6 +39,9 @@ URxvt.matcher.button: 1
 ! Change font size on the fly (perl-ext-common: resize-font)
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
+
+! command to run on BEL
+URxvt.bell-command: notify-send "ding, ding"
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

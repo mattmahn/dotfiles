@@ -3,6 +3,7 @@
 
 # don't ignore the following files:
 !/i3status
+!compton.conf
 !dust
 !ranger/rifle.conf
 !redshift.conf

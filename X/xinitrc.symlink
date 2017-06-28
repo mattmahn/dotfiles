@@ -40,10 +40,11 @@ xinput set-prop 13 304 1
 xrandr --dpi '92x92'
 
 [ -f ~/.fehbg ] && sh ~/.fehbg &
-compton &>/dev/null &
+compton -b --config ~/.config/compton.conf
 redshift -c ~/.config/redshift.conf &>/dev/null &
 numlockx &
 dunst &
 dropbox &
+urxvtd -qfo
 
 exec i3

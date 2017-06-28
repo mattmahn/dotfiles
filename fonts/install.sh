@@ -16,7 +16,7 @@ if test "$(which pacman)"; then
     ttf-hack \
     ttf-inconsolata \
     ttf-liberation \
-    ttf-lunx-libertine \
+    ttf-linux-libertine \
     ttf-roboto \
     ttf-ubuntu-font-family \
   )

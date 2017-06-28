@@ -1,20 +1,23 @@
 "*":
-  editor:
-    invisibles: {}
-    fontSize: 12
-    showIndentGuide: true
-    showInvisibles: false
-    scrollPastEnd: true
-    fontFamily: "Monoisome"
   core:
-    hideGitIgnoredFiles: true
     autoHideMenuBar: true
-    projectHome: "~/code/"
     disabledPackages: [
       "wrap-guide"
     ]
-  welcome:
-    showOnStartup: false
+    hideGitIgnoredFiles: true
+    projectHome: "~/code/"
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Hasklig"
+    fontSize: 13
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: false
+  "exception-reporting":
+    userId: "030efa05-fbc7-46a3-a834-c3ee9bb612e2"
   linter: {}
   "tree-view":
     hideVcsIgnoredFiles: false
+  welcome:
+    showOnStartup: false
