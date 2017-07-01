@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p ~/.vim/undodir
+
 if test "$(which pacman)"; then
   sudo pacman -S --noconfirm --needed gvim ctags
 fi
