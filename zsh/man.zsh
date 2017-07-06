@@ -13,7 +13,8 @@ man() {
 }
 
 vman() {
-  vim -c "SuperMan $*" -c "set nonumber" -c "IndentLinesDisable"
+  vim -c "SuperMan $*" -c "set nonumber" -c "IndentLinesDisable" \
+    -c "set laststatus=1"
 
   if [[ "$?" != "0" ]]; then
     echo "No manual entry for $*"
