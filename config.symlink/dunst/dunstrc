@@ -243,4 +243,4 @@
 #    summary = *twitter.com*
 #    urgency = normal
 #
-# vim: ft=cfg
+# vim: ft=cfg sw=4
