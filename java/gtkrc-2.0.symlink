@@ -1,5 +1,6 @@
+gtk-font-name = "Fira Sans 10"
 style "gtkcompact" {
-  font_name = "Sans Condensed 8"
+  font_name = "Fira Sans 9"
   GtkButton::default_border={0,0,0,0}
   GtkButton::default_outside_border={0,0,0,0}
   GtkButtonBox::child_min_width=0

@@ -4,6 +4,7 @@
 # don't ignore the following files:
 !/i3status
 !compton.conf
-!dust
+!dunst
+!polybar
 !ranger/rifle.conf
 !redshift.conf

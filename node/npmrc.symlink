@@ -1,1 +1,2 @@
-prefix = ~/.npm
+prefix=/home/matt/.npm
+sign-git-tag=true
