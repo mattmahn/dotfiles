@@ -17,6 +17,7 @@ if test "$(which pacman)"; then
     ttf-inconsolata \
     ttf-liberation \
     ttf-linux-libertine \
+    ttf-opensans \
     ttf-roboto \
     ttf-ubuntu-font-family \
   )
