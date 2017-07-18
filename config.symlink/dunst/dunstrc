@@ -12,7 +12,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
+    markup = full
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -148,9 +148,8 @@
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-[frame]
-    width = 1
-    # color = "#aaaaaa"
+    #frame_color = "#aaaaaa"
+    frame_width = 1
 
 [shortcuts]
 
