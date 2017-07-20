@@ -6,8 +6,8 @@ export DOTFILES="$HOME/.dotfiles"
 export PROJECTS="$HOME/code"
 
 # make sure the system knows how I like to edit
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # all of our zsh files
 typeset -U config_files
