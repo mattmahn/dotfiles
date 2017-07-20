@@ -29,6 +29,7 @@ if test "$(which pacman)"; then
     otf-texgyre \
     phallus-fonts-git \
     system-san-francisco-font-git \
+    ttf-iosevka-term \
     ttf-monoid \
     ttf-{ms,vista}-fonts \
   )
