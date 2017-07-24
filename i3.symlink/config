@@ -136,11 +136,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-bar {
-    position bottom
-    status_command i3status -c ~/.config/i3status/config
-}
+exec_always --no-startup-id ~/.dotfiles/polybar/launch.sh
 
 # disable titlebars for i3-gaps
 for_window [class="^.*"] border pixel 0
