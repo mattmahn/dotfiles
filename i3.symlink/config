@@ -213,7 +213,7 @@ for_window [class="Steam" title="Friends"] floating enable, resize set 265 500
 
 # awesome terminal dropdown
 exec --no-startup-id ~/.i3/dropdown.sh
-for_window [instance="dropdown" class="URxvt"] floating enable, move position center
+for_window [instance="dropdown" class="URxvt"] floating enable, move position 50% 50%
 for_window [instance="dropdown" class="URxvt"] move scratchpad
 bindsym $mod+grave [instance="dropdown" class="URxvt"] scratchpad show
 
