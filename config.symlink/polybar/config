@@ -8,13 +8,13 @@
 ;=====================================================
 
 [colors]
-background = #f0f0f0
+background = #00f0f0f0
 background-alt = #444
 foreground = #2d3635
 foreground-alt = #555
 primary = ${xrdb:*.color1:#ffb52a}
 secondary = ${xrdb:*.color2:#e60053}
-alert = ${xrdb:*.color3#bd2c40}
+alert = ${xrdb:*.color3:#bd2c40}
 
 ;background  = ${xrdb:*.background:#222}
 ;foreground  = ${xrdb:*.foreground:#dfdfdf}
@@ -32,6 +32,7 @@ darkyellow  = ${xrdb:*.color3:#eab93d}
 green       = ${xrdb:*.color10:#00ff00}
 lightgrey   = ${xrdb:*.color7:#cccccc}
 magenta     = ${xrdb:*.color13:#f57900}
+pink        = ${colors.magneta}
 red         = ${xrdb:*.color9:#ff0000}
 white       = ${xrdb:*.color15:#ffffff}
 yellow      = ${xrdb:*.color11:#00ffff}
@@ -62,8 +63,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Hermit:pixelsize=8;0
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-0 = Hermit:pixelsize=8;2
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;1
 font-2 = FontAwesome:pixelsize=10;0
 
 modules-left = bspwm i3 spotify
@@ -72,8 +73,8 @@ modules-right = volume cpu wlan eth battery temperature
 
 tray-position = right
 tray-padding = 2
-tray-transparent = false
-;tray-background = ${root.background}
+tray-transparent = true
+tray-background = ${root.background}
 
 ;wm-restack = i3
 ;override-redirect = true
@@ -139,21 +140,21 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -163,8 +164,8 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
 
 [module/xbacklight]
 type = internal/xbacklight
