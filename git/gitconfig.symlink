@@ -1,11 +1,11 @@
+# vim:sw=4:ts=4
 # Sample gitconfig
 #
 # You probably want to change the [user] section here since you are not me.
 [user]
     name       = Matthew Mahnke
-	email = mmahnke18@gmail.com
-    helper     = cache
-	signingkey = 3AC28A56
+    email      = mmahnke18@gmail.com
+    signingkey = 3AC28A56
 [alias]
     co                  = checkout
     promote             = !$ZSH/bin/git-promote
@@ -27,19 +27,18 @@
     pr                  = !zsh -ic \"open-pr $*\"
     yolo                = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 [color]
-    branch  = auto
-    diff    = auto
-    grep    = true
-    status  = auto
-    branch  = auto
-    ui      = true
+    branch = auto
+    diff   = auto
+    grep   = true
+    status = auto
+    branch = auto
+    ui     = true
 [commit]
     template = ~/.dotfiles/git/template.txt
 [core]
     autocrlf          = input
     compression       = -1
     excludesfile      = ~/.gitignore
-    editor            = vim
     whitespace        = trailing-space,space-before-tab
     precomposeunicode = true
 [apply]
@@ -62,8 +61,8 @@
 [push]
     default = simple
 [dotfiles]
-	lastupdate = 201612162305
+    lastupdate = 201612162305
 [github]
-	user = mattmahn
+    user = mattmahn
 [credential]
-	helper = cache
+    helper = cache
