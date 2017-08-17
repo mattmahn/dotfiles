@@ -20,7 +20,7 @@ font pango:Inconsolata 9
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # Kill focused window
@@ -215,8 +215,8 @@ for_window [class="keepassxc"] floating enable, resize set 880 647
 
 # awesome terminal dropdown
 exec --no-startup-id ~/.i3/dropdown.sh
-for_window [instance="dropdown" class="URxvt"] floating enable, move position 50% 50%
-for_window [instance="dropdown" class="URxvt"] move scratchpad
-bindsym $mod+grave [instance="dropdown" class="URxvt"] scratchpad show
+for_window [class="dropdown"] floating enable, move position 50% 50%
+for_window [class="dropdown"] move scratchpad
+bindsym $mod+grave [class="dropdown"] scratchpad show
 
 # vim: filetype=i3config tw=0

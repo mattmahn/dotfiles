@@ -5,8 +5,8 @@
 # kill the current terminal.
 
 while true; do
-  if [[ ! $(pgrep -fu $USER 'urxvt -name dropdown') ]]; then
-    urxvt -name dropdown -geometry 180x40 -cd "$HOME"
+  if [[ ! $(pgrep -fu "$USER" 'alacritty .* dropdown') ]]; then
+    alacritty -t dropdown -d 180 40
   fi
   sleep 5
 done

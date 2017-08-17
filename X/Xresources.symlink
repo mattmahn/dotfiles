@@ -2,7 +2,7 @@
 ! rxvt-unicode terminal emulaotor settigns
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#define TERM_FONT xft:Noto Mono for Powerline:size=8.5
+#define TERM_FONT xft:Noto Mono for Powerline:size=9
 
 ! Set transparency for urxvt
 URxvt*.transparent: true
@@ -48,22 +48,25 @@ URxvt.bell-command: notify-send "ding, ding"
 ! Colors
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#include </home/matt/.dotfiles/X/colors/baskerville-ivorylight.Xcolors>
+#include </home/matt/.dotfiles/X/colors/one-dark.Xcolors>
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Rofi application switcher settings
 ! http://davedavenport.github.io/rofi
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#define ROFI_BG #210437
-#define ROFI_FG #ffffff
-#define ROFI_HL #fc2a53
-#define ROFI_UG #ffff5f
+#define ROFI_BG #1e2127
+#define ROFI_FG #abb2bf
+#define ROFI_HL #56b6c2
+#define ROFI_UG #d19a66
 rofi.color-enabled: true
-rofi.color-window: ROFI_BG, ROFI_BG, ROFI_BG
-rofi.color-normal: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
 rofi.color-active: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
+rofi.color-normal: ROFI_BG, ROFI_FG, ROFI_BG, ROFI_HL, ROFI_BG
 rofi.color-urgent: ROFI_UG, ROFI_BG, ROFI_UG, ROFI_UG, ROFI_BG
-rofi.font: Inconsolata 14
-rofi.padding: 200
+rofi.color-window: ROFI_BG, ROFI_BG, ROFI_BG
+rofi.font: Noto Mono for Powerline 12
+rofi.location: 2
+rofi.padding: 10
 rofi.separator-style: none
+rofi.sidebar-mode: true
+rofi.width: 960
