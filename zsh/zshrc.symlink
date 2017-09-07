@@ -58,3 +58,6 @@ if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/google-c
 
 # gulp cli task completion
 [ gulp ] && eval "$(gulp --completion=zsh)"
+
+# pip cli completion
+if python3 -m pip &>/dev/null; then eval "$(python3 -m pip completion -z)"; fi
