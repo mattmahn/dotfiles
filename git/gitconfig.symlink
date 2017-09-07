@@ -37,6 +37,7 @@
     template = ~/.dotfiles/git/template.txt
 [core]
     autocrlf          = input
+    attributesFile    = ~/.gitattributes
     compression       = -1
     excludesfile      = ~/.gitignore
     whitespace        = trailing-space,space-before-tab

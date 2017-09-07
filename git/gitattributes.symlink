@@ -1,0 +1,14 @@
+*.c    diff=cpp
+*.cpp  diff=cpp
+*.cs   diff=csharp
+*.css  diff=css
+*.html diff=html
+*.java diff=java
+*.m    diff=matlab
+*.php  diff=php
+*.pl   diff=perl
+*.py   diff=python
+*.rb   diff=ruby
+*.tex  diff=tex
+
+CHANGELOG*  merge=union
