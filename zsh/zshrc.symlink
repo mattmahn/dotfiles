@@ -9,6 +9,7 @@ export PROJECTS="$HOME/code"
 export EDITOR=nvim
 export VISUAL=nvim
 export GIT_EDITOR=$EDITOR
+export PAGER=less
 
 # all of our zsh files
 typeset -U config_files
@@ -57,7 +58,7 @@ if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/google-cloud-s
 if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
 # gulp cli task completion
-[ gulp ] && eval "$(gulp --completion=zsh)"
+[ gulp &>/dev/null ] && eval "$(gulp --completion=zsh)"
 
 # pip cli completion
-if python3 -m pip &>/dev/null; then eval "$(python3 -m pip completion -z)"; fi
+[ python3 -m pip &>/dev/null ] && eval "$(python3 -m pip completion -z)"
