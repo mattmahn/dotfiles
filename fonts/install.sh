@@ -9,11 +9,11 @@ if test "$(which pacman)"; then
     adobe-source-{code,sans,serif}-pro-fonts \
     noto-fonts{,-emoji} \
     otf-fira-{mono,sans} \
+    otf-hack \
     terminus-font \
     ttf-anonymous-pro \
     ttf-dejavu \
     ttf-gentium \
-    ttf-hack \
     ttf-inconsolata \
     ttf-liberation \
     ttf-linux-libertine \
@@ -30,7 +30,9 @@ if test "$(which pacman)"; then
     phallus-fonts-git \
     system-san-francisco-font-git \
     ttf-iosevka-term \
+    ttf-librebaskerville \
     ttf-monoid \
+    ttf-paratype \
     ttf-{ms,vista}-fonts \
   )
   sudo pacman -S --noconfirm --needed "${pacman[*]}"
