@@ -2,7 +2,7 @@
 ! rxvt-unicode terminal emulaotor settigns
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#define TERM_FONT xft:Noto Mono for Powerline:size=9
+#define TERM_FONT xft:Fira Mono:size=9
 
 ! Set transparency for urxvt
 URxvt*.transparent: true

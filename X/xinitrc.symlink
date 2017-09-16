@@ -41,10 +41,10 @@ xrandr --dpi '92x92'
 
 [ -f ~/.fehbg ] && sh ~/.fehbg &
 compton -b --config ~/.config/compton.conf
-redshift -c ~/.config/redshift.conf &>/dev/null &
+redshift -c ~/.config/redshift.conf >/dev/null 2>&1 &
 numlockx &
 dunst &
-dropbox &
+dropboxd &
 urxvtd -qfo
 
 exec i3
