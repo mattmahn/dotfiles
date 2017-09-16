@@ -234,7 +234,7 @@ for_window [class="keepassxc"] floating enable, resize set 880 647
 
 # awesome terminal dropdown
 exec --no-startup-id ~/.i3/dropdown.sh
-for_window [class="dropdown"] floating enable, move position 50% 50%
+for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad
 bindsym $mod+grave [class="dropdown"] scratchpad show
 

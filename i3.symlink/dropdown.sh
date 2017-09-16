@@ -6,7 +6,7 @@
 
 while true; do
   if [[ ! $(pgrep -fu "$USER" 'alacritty .* dropdown') ]]; then
-    alacritty -t dropdown -d 180 40
+    alacritty -t dropdown -d 180 40 --working-directory ~
   fi
   sleep 5
 done
