@@ -13,10 +13,5 @@ man() {
 }
 
 vman() {
-  vim -c "SuperMan $*" -c "set nonumber" -c "IndentLinesDisable" \
-    -c "set laststatus=1"
-
-  if [[ "$?" != "0" ]]; then
-    echo "No manual entry for $*"
-  fi
+  MANPAGER="nvim -c 'set ft=man' -" man "$@"
 }
