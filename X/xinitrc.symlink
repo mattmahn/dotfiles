@@ -44,7 +44,7 @@ compton -b --config ~/.config/compton.conf
 redshift -c ~/.config/redshift.conf >/dev/null 2>&1 &
 numlockx &
 dunst &
-dropboxd &
+( sleep 20; dropboxd ) &
 urxvtd -qfo
 
 exec i3
