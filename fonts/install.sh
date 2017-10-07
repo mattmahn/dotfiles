@@ -26,7 +26,6 @@ if test "$(which pacman)"; then
     otf-fira-code \
     otf-hasklig \
     otf-hermit \
-    otf-texgyre \
     phallus-fonts-git \
     system-san-francisco-font-git \
     ttf-iosevka-term \
