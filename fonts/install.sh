@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 VERSION="v2.020"
 VERSION_="v2_020"
@@ -9,7 +9,6 @@ if test "$(which pacman)"; then
     adobe-source-{code,sans,serif}-pro-fonts \
     noto-fonts{,-emoji} \
     otf-fira-{mono,sans} \
-    otf-hack \
     terminus-font \
     ttf-anonymous-pro \
     ttf-dejavu \
@@ -22,8 +21,9 @@ if test "$(which pacman)"; then
     ttf-ubuntu-font-family \
   )
   yaourt=(\
-    gohu-powerline \
+    gohufont-powerline \
     otf-fira-code \
+    otf-hack \
     otf-hasklig \
     otf-hermit \
     phallus-fonts-git \
@@ -34,8 +34,8 @@ if test "$(which pacman)"; then
     ttf-paratype \
     ttf-{ms,vista}-fonts \
   )
-  sudo pacman -S --noconfirm --needed "${pacman[*]}"
-  yaourt -S --noconfirm "${yaourt[*]}"
+  sudo pacman -S --noconfirm --needed ${pacman[*]}
+  yaourt -S --noconfirm ${yaourt[*]}
 elif [ "$(uname -s)" = "Darwin" ]; then
   curl -L -s -o /tmp/hack.tgz "$URL/$VERSION/Hack-${VERSION_}-otf.tar.gz"
   tar xzvf /tmp/hack.tgz -C ~/Library/Fonts
@@ -44,9 +44,13 @@ else
   curl -L -s -o /tmp/hack.tgz "$URL/$VERSION/Hack-${VERSION_}-ttf.tar.gz"
   tar xzvf /tmp/hack.tgz -C ~/.fonts
 fi
+exit
 
-cd /tmp
-git clone https://github.com/powerline/fonts.git
-./fonts/install.sh
-rm -rf fonts
-cd -
+tmpdir="$(mktemp -d)"
+(
+  # shellcheck disable=SC2164
+  cd "$tmpdir"
+  git clone https://github.com/powerline/fonts.git
+  ./fonts/install.sh
+)
+rm -rf "$tmpdir"
