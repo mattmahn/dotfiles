@@ -6,6 +6,8 @@ if test "$(which pacman)"; then
   sudo pacman -S --noconfirm --needed gvim neovim ctags
   # install extra language providers
   sudo pacman -S --noconfirm --needed python python-pip ruby
+elif [ "$(uname -s)" = "Darwin" ]; then
+  brew install neovim
 fi
 
 # install neovim Python provider (system-wide)

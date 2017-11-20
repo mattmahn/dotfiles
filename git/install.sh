@@ -15,4 +15,6 @@ fi
 # install git-standup
 if [ yaourt ]; then
   yaourt -S git-standup-git
+elif [ "$(uname -s)" = "Darwin" ]; then
+  brew install git-standup
 fi
