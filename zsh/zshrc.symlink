@@ -62,3 +62,5 @@ if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/google-c
 
 # pip cli completion
 [ python3 -m pip &>/dev/null ] && eval "$(python3 -m pip completion -z)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
