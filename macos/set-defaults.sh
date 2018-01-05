@@ -177,7 +177,7 @@ echo "  › Setting the icon size of Dock items to 36 pixels for optimal size/sc
 defaults write com.apple.dock tilesize -int 36
 
 echo "  › Speeding up Mission Control animations and grouping windows by application"
-defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock expose-animation-duration -float 0.2
 defaults write com.apple.dock "expose-group-by-app" -bool true
 
 echo "  › Remove the auto-hiding Dock delay"
