@@ -1,0 +1,29 @@
+# vim: sw=4:ts=4:tw=0:cc=0
+XF86Audio{Raise,Lower}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86MonBrightness{Up,Down}
+    xbacklight -{inc,dec} 5
+
+XF86Suspend
+    systemctl suspend
+XF86Sleep
+    systemctl suspend
+
+Print
+    scrot "~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
+    notify-send 'screenshot saved in ~/Dropbox/Screenshots/'
+shift + Print
+    maim -s -f png | xclip -selection clipboard -t image/png
+    notify-send 'screenshot in clipboard'
+alt + Print
+    maim -i "$(xdotool getactivewindow)" -f png | xclip -selection clipboard -t image/png
+    notify-send 'screenshot in clipboard'
+
+alt + super + l
+    ~/.dotfiles/i3.symlink/screenlock.sh
+
+super + d
+    ~/.dotfiles/i3.symlink/run-rofi.sh

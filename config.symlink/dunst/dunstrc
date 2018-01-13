@@ -140,7 +140,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /bin/google-chrome-stable
+    browser = /bin/firefox-developer
 
     # Align icons left/right/off
     icon_position = off

@@ -381,11 +381,12 @@ tail = false
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.spotify-green}
-label = %output:0:45:...%
+label = %output:0:50:...%
 exec = /home/matt/.dotfiles/polybar/mpris.sh
 click-left = playerctl play-pause
 
 [settings]
+enable-ipc = true
 screenchange-reload = true
 ;compositing-background = xor
 ;compositing-background = screen

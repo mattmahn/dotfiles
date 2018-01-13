@@ -3,6 +3,7 @@
 icon=""
 
 player_status=$(playerctl status 2>/dev/null)
+# shellcheck disable=2181
 if [[ $? -eq 0 ]]; then
   metadata="\"$(playerctl metadata title)\" by $(playerctl metadata artist)"
 fi

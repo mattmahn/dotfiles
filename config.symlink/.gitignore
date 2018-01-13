@@ -8,3 +8,5 @@
 !polybar
 !ranger/rifle.conf
 !redshift.conf
+!sxhkd
+!systemd/**/*.service

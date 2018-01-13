@@ -7,7 +7,7 @@
 ! Set transparency for urxvt
 URxvt*.transparent: true
 !URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 150
+URxvt*.shading: 50
 URxvt*blurRadius: 15
 
 URxvt.scrollBar: off
@@ -30,7 +30,7 @@ URxvt.letterSpace: 0
 
 ! Enable clickable URLs
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,resize-font
-URxvt.url-launcher: google-chrome-stable
+URxvt.url-launcher: firefox-developer
 URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:active

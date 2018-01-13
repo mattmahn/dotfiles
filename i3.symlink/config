@@ -46,10 +46,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Start dmenu
-bindsym $mod+d exec ~/.dotfiles/i3.symlink/run-rofi.sh
-
-# lockscreen (Super+Alt+l)
-bindsym Mod1+Mod4+l exec ~/.dotfiles/i3.symlink/screenlock.sh
+# set  in sxhkd
 
 # Remove container borders at screen edge
 hide_edge_borders both
@@ -200,24 +197,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-# Enable volume keys on the keyboard
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-# This enables the mute button
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-# Enable the brightness control key on the keyboard. <strike>See http://goo.gl/PFyTRs</strike>
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-
-# Take screenshot. `Shift` for screenshot of window / rectange region.
-bindsym --release Print exec scrot ~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-bindsym --release Shift+Print exec scrot -s ~/Dropbox/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-
-# Enable sleep keyboard button
-bindsym XF86Suspend exec systemctl suspend
-bindsym XF86Sleep exec systemctl suspend
 
 # Make floating windows that you'd think would be foating windows,
 # floating windows

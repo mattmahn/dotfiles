@@ -3,7 +3,7 @@
 # terminate running bar instances
 killall -q polybar
 
-# wait until processes have ecitedd
+# wait until processes have exited
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # launch bars

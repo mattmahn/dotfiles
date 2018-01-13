@@ -1,5 +1,32 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
+custom_colorschemes:
+  one:
+    dark: &one_dark
+      primary:
+        background: '0x1e2127'
+        foreground: '0xabb2bf'
+      # Normal colors
+      normal:
+        black:   '0x1e2127'
+        red:     '0xe06c75'
+        green:   '0x98c379'
+        yellow:  '0xd19a66'
+        blue:    '0x61afef'
+        magenta: '0xc678dd'
+        cyan:    '0x56b6c2'
+        white:   '0xabb2bf'
+      # Bright colors
+      bright:
+        black:   '0x5c6370'
+        red:     '0xe06c75'
+        green:   '0x98c379'
+        yellow:  '0xd19a66'
+        blue:    '0x61afef'
+        magenta: '0xc678dd'
+        cyan:    '0x56b6c2'
+        white:   '0xffffff'
+
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -17,8 +44,8 @@ env:
 # Window dimensions in character columns and lines
 # (changes require restart)
 dimensions:
-  columns: 80
-  lines: 24
+  columns: 90
+  lines: 30
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
@@ -87,34 +114,7 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Colors (One Dark)
-colors:
-  # Default colors
-  primary:
-    background: '0x1e2127'
-    foreground: '0xabb2bf'
-
-  # Normal colors
-  normal:
-    black:   '0x1e2127'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0xabb2bf'
-
-  # Bright colors
-  bright:
-    black:   '0x5c6370'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0xffffff'
+colors: *one_dark
 
 # Visual Bell
 #
@@ -143,7 +143,7 @@ visual_bell:
   duration: 300
 
 # Background opacity
-background_opacity: 1.0
+background_opacity: 0.5
 
 # Key bindings
 #

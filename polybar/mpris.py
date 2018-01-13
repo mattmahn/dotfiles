@@ -3,10 +3,10 @@
 DBus client that listens for MPRIS events and outputs a string used for polybar
 """
 
-from sys import argv, exit, version_info
+import sys
 
-if (version_info.major == 3 and version_info.minor < 6) \
-        or (version_info.major < 3):
+if (sys.version_info.major == 3 and sys.version_info.minor < 6) \
+        or (sys.version_info.major < 3):
     print('Python 3.6 or later is required')
     exit(1)
 
@@ -15,7 +15,7 @@ gi.require_version('Playerctl', '1.0')
 from gi.repository import Playerctl, GLib
 
 ICON = ''
-SHRUG = '¯\_(ツ)_/¯'
+SHRUG = r"¯\_(ツ)_/¯"
 
 def format_time(seconds):
     hours, rem = divmod(seconds, 3600)

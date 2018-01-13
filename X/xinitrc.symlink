@@ -37,7 +37,7 @@ xinput set-prop 13 304 1
 
 [ -f /etc/xprofile ] && source /etc/xprofile
 
-xrandr --dpi '92x92'
+xrandr --dpi 96
 
 [ -f ~/.fehbg ] && sh ~/.fehbg &
 compton -b --config ~/.config/compton.conf
@@ -46,5 +46,7 @@ numlockx &
 dunst &
 ( sleep 20; dropboxd ) &
 urxvtd -qfo
+sxhkd &
 
-exec i3
+# exec i3
+exec awesome
