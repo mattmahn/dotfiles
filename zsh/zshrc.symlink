@@ -58,9 +58,9 @@ if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/google-cloud-s
 if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
 # gulp cli task completion
-[ gulp &>/dev/null ] && eval "$(gulp --completion=zsh)"
+[ command -v gulp &>/dev/null ] && eval "$(gulp --completion=zsh)"
 
 # pip cli completion
 [ python3 -m pip &>/dev/null ] && eval "$(python3 -m pip completion -z)"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -e "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
