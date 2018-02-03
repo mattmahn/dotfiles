@@ -33,7 +33,7 @@ gi() {
 }
 
 gitall() {
-  git_dirs=( $(find . -maxdepth 2 -type d -a -readable) )
+  git_dirs=( $(find . -maxdepth 2 -type d -a -perm '-a=r') )
   for gd in $git_dirs; do
     if [[ -d "${gd}/.git" ]]; then
       echo -e "\e[1;4;32m${gd}:\e[0m"

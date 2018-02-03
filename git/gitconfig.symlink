@@ -45,11 +45,7 @@
 [apply]
     whitespace = nowarn
 [diff]
-    tool = diffmerge
-[difftool "diffmerge"]
-    cmd = diffmerge $LOCAL $REMOTE
-[difftool]
-    prompt = false
+    tool = vimdiff
 [grep]
     extendRegexp = true
     lineNumber   = true
@@ -57,8 +53,9 @@
     autocorrect = 10
 [merge]
     tool = meld
-[mergetool]
-    tool = meld
+[mergetool "nvimdiff"]
+    conflictstyle = diff3
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [push]
     default = simple
 [dotfiles]

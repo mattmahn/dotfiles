@@ -13,3 +13,5 @@
 .svn
 dump.rdb
 tags
+tags.lock
+tags.temp
