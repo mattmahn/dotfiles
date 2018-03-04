@@ -14,6 +14,7 @@
 .java-version
 .org-id-locations
 .project
+.projectile
 .ruby-version
 .settings
 .svn
