@@ -2,7 +2,7 @@
 ! rxvt-unicode terminal emulaotor settigns
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#define TERM_FONT xft:Fira Mono:size=9
+#define TERM_FONT xft:Fira Code:size=9
 
 ! Set transparency for urxvt
 URxvt*.transparent: true
@@ -42,6 +42,9 @@ URxvt.resize-font.bigger: C-Up
 
 ! command to run on BEL
 URxvt.bell-command: notify-send "ding, ding"
+
+Emacs.FontBackend: xft,x
+Emacs.font: Inconsolata:size=16
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
