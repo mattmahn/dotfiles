@@ -1,11 +1,3 @@
-# Sample gitconfig
-#
-# You probably want to change the [user] section here since you are not me.
-[user]
-    name       = AUTHORNAME
-    email      = AUTHOREMAIL
-    helper     = GIT_CREDENTIAL_HELPER
-    signingkey = GPGKEYID
 [alias]
     co                  = checkout
     promote             = !$ZSH/bin/git-promote
@@ -25,6 +17,8 @@
     fm                  = !zsh -ic \"git-fetch-merge $*\"
     pr                  = !zsh -ic \"open-pr $*\"
     yolo                = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+[apply]
+    whitespace = nowarn
 [color]
     branch  = auto
     diff    = auto
@@ -41,14 +35,14 @@
     editor            = vim
     whitespace        = trailing-space,space-before-tab
     precomposeunicode = true
-[apply]
-    whitespace = nowarn
 [diff]
     tool = diffmerge
 [difftool "diffmerge"]
     cmd = diffmerge $LOCAL $REMOTE
 [difftool]
     prompt = false
+[github]
+    username = mattmahn
 [grep]
     extendRegexp = true
     lineNumber   = true
@@ -60,5 +54,3 @@
     tool = meld
 [push]
     default = simple
-[github]
-    username = mattmahn

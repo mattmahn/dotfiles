@@ -145,7 +145,7 @@ visual_bell:
   duration: 300
 
 # Background opacity
-background_opacity: 0.75
+background_opacity: 0.9
 
 # Key bindings
 #
