@@ -1,62 +1,63 @@
+# vim:autoindent:noexpandtab:ts=4:sw=4:
 [alias]
-    co                  = checkout
-    promote             = !$ZSH/bin/git-promote
-    wtf                 = !$ZSH/bin/git-wtf
-    unpushed-st         = !$ZSH/bin/git-unpushed-stat
-    nuke                = !$ZSH/bin/git-nuke
-    count               = shortlog -sn
-    lc                  = !$ZSH/bin/git-add-rm-line-count
-    logs                = log --pretty=\"format:%h %G? %aN  %s\"
-    g                   = grep --break --heading --line-number
-    gi                  = grep --break --heading --line-number -i
-    changed             = show --pretty=\"format:\" --name-only
-    cp-branch-name      = !git rev-parse --abbrev-ref HEAD | pbcopy
-    delete-local-merged = !zsh -ic git-delete-local-merged
-    add-upstream        = !zsh -ic \"add-upstream $*\"
-    sync                = !zsh -ic git-sync
-    fm                  = !zsh -ic \"git-fetch-merge $*\"
-    pr                  = !zsh -ic \"open-pr $*\"
-    yolo                = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+	co                  = checkout
+	promote             = !$ZSH/bin/git-promote
+	wtf                 = !$ZSH/bin/git-wtf
+	unpushed-st         = !$ZSH/bin/git-unpushed-stat
+	nuke                = !$ZSH/bin/git-nuke
+	count               = shortlog -sn
+	lc                  = !$ZSH/bin/git-add-rm-line-count
+	logs                = log --pretty=\"format:%h %G? %aN  %s\"
+	g                   = grep --break --heading --line-number
+	gi                  = grep --break --heading --line-number -i
+	changed             = show --pretty=\"format:\" --name-only
+	cp-branch-name      = !git rev-parse --abbrev-ref HEAD | pbcopy
+	delete-local-merged = !zsh -ic git-delete-local-merged
+	add-upstream        = !zsh -ic \"add-upstream $*\"
+	sync                = !zsh -ic git-sync
+	fm                  = !zsh -ic \"git-fetch-merge $*\"
+	pr                  = !zsh -ic \"open-pr $*\"
+	yolo                = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 [apply]
-    whitespace = nowarn
+	whitespace = nowarn
 [color]
-    branch  = auto
-    diff    = auto
-    grep    = true
-    status  = auto
-    branch  = auto
-    ui      = true
+	branch  = auto
+	diff    = auto
+	grep    = true
+	status  = auto
+	branch  = auto
+	ui      = true
 [commit]
-    template = ~/.dotfiles/git/template.txt
+	template = ~/.dotfiles/git/template.txt
 [core]
-    autocrlf          = input
-    compression       = -1
-    excludesfile      = ~/.gitignore
-    editor            = vim
-    whitespace        = trailing-space,space-before-tab
-    precomposeunicode = true
+	autocrlf          = input
+	compression       = -1
+	excludesfile      = ~/.gitignore
+	editor            = vim
+	whitespace        = trailing-space,space-before-tab
+	precomposeunicode = true
 [diff]
-    tool = diffmerge
+	tool = diffmerge
 [difftool "diffmerge"]
-    cmd = diffmerge $LOCAL $REMOTE
+	cmd = diffmerge $LOCAL $REMOTE
 [difftool]
-    prompt = false
+	prompt = false
 [github]
-    username = mattmahn
+	username = mattmahn
 [grep]
-    extendRegexp = true
-    lineNumber   = true
+	extendRegexp = true
+	lineNumber   = true
 [help]
-    autocorrect = 10
+	autocorrect = 10
 [merge]
-    tool = meld
-[merge.npm-merge-driver]
+	tool = meld
+[merge "npm-merge-driver"]
 	name = Automatically merge npm lockfiles
 	driver = npx npm-merge-driver merge %A %O %B %P
-[merge.yarn-merge-driver]
+[merge "yarn-merge-driver"]
 	name = Automatically merge Yarn lockfile
 	driver = npx npm-merge-driver merge %A %O %B %P -c yarn
 [mergetool]
-    tool = meld
+	tool = meld
 [push]
-    default = simple
+	default = simple
