@@ -39,11 +39,12 @@ setup_gitconfig () {
     read -r user_name
     user ' - What is your github author email?'
     read -r user_email
-    user ' - What is your GPG keyid? (gpg -k --keyid-format SHORT)'
-    read -r -e git_gpgkeyid
+    user ' - What is your GPG keyid? (gpg -K --keyid-format SHORT)'
+    read -r git_gpgkeyid
 
     git config --global user.name "$user_name"
     git config --global user.email "$user_email"
+    git config --global user.signingkey "$git_gpgkeyid"
   elif [ "$(git config --global --get dotfiles.managed)" != "true" ]; then
     # if user.email exists, let's check for dotfiles.managed config. If it is
     # not true, we'll backup the gitconfig file and set previous user.email and
@@ -58,8 +59,11 @@ setup_gitconfig () {
     # otherwise this gitconfig was already made by the dotfiles
     info "already managed by dotfiles"
   fi
-  # include the gitconfig.local file
-  git config --global include.path ~/.gitconfig.local
+  # clear all included configs then add versioned gitconfig.commom and
+  # machine-local gitconfig.local
+  git config --global --unset-all include.path
+  git config --global --add include.path ~/.gitconfig.common
+  git config --global --add include.path ~/.gitconfig.local
   # finally make git knows this is a managed config already, preventing later
   # overrides by this script
   git config --global dotfiles.managed true
