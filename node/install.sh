@@ -5,7 +5,7 @@ elif [ "$(uname -s)" = "Darwin" ]; then
   brew install nvm
 fi
 
-if which nvm >/dev/null 2>&1; then
+if command -v nvm >/dev/null 2>&1; then
   nvm install node
   nvm use node
 fi
