@@ -18,3 +18,8 @@ if command -v yaourt >/dev/null 2>&1; then
 elif [ "$(uname -s)" = "Darwin" ]; then
   brew install git-standup
 fi
+
+# install npm/yarn merge driver
+if command -v npm >/dev/null 2>&1; then
+  npm i -g npm-merge-driver
+fi

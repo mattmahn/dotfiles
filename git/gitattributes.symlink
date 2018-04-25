@@ -12,3 +12,7 @@
 *.tex  diff=tex
 
 CHANGELOG*  merge=union
+
+package-lock.json merge=npm-merge-driver
+npm-shrinkwrap.json merge=npm-merge-driver
+yarn.lock merge=yarn-merge-driver
