@@ -4,7 +4,7 @@
 
 if [[ "$(uname -s)" = "Darwin" ]]; then
   nvm_install_dir="/usr/local/Cellar/nvm"
-  latest_version="$(/bin/ls $nvm_install_dir | sort -rn | head -n 1)"
-  . "$nvm_install_dir/$latest_version/nvm.sh"
-  nvm use node &>/dev/null
+  latest_nvm_version="$(/bin/ls $nvm_install_dir | sort -rn | head -n 1)"
+  . "$nvm_install_dir/$latest_nvm_version/nvm.sh"
+  nvm use 9 &>/dev/null
 fi
