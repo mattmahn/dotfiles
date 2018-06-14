@@ -61,7 +61,7 @@ setup_gitconfig () {
   fi
   # clear all included configs then add versioned gitconfig.commom and
   # machine-local gitconfig.local
-  git config --global --unset-all include.path
+  git config --global --get-all include.path && git config --global --unset-all include.path || true
   git config --global --add include.path ~/.gitconfig.common
   git config --global --add include.path ~/.gitconfig.local
   # finally make git knows this is a managed config already, preventing later
