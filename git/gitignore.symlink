@@ -18,6 +18,7 @@
 .ruby-version
 .settings
 .svn
+.vs/
 \#*\#
 dump.rdb
 flycheck_*.el
