@@ -32,10 +32,11 @@
 [core]
 	autocrlf          = input
 	compression       = -1
-	excludesfile      = ~/.gitignore
 	editor            = vim
+	excludesFile      = ~/.gitignore
+	precomposeUnicode = true
+	preloadIndex      = true
 	whitespace        = trailing-space,space-before-tab
-	precomposeunicode = true
 [diff]
 	tool = diffmerge
 [difftool "diffmerge"]
