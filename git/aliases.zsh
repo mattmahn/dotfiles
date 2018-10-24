@@ -16,6 +16,7 @@ alias glga="glg --all"
 alias gp='git push origin HEAD'
 alias gpa='git push origin --all'
 alias gpr='gp && git pr'
+alias gpf='gp --force-with-lease'
 alias gpu='git push -u origin HEAD'
 alias gs='git status -sb'
 
