@@ -23,3 +23,10 @@ pip() {
   __pyenv_init
   command pip "$@"
 }
+
+# add pip-install location to PATH
+if [ "$(uname)" = "Darwin" ]; then
+  for version in ${HOME}/Library/Python/*; do
+    export PATH="${PATH}:${version}/bin"
+  done
+fi
