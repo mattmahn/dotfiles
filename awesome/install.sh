@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ "$(uname -s)" = "Darwin" ] && exit 0
+[ "$(uname -s)" != "Linux" ] && exit 0
 
 if test "$(which pacman)"; then
   sudo pacman -S --noconfirm --needed awesome

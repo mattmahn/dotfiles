@@ -1,18 +1,16 @@
 #!/bin/bash
 
-VERSION="v2.020"
-VERSION_="v2_020"
-URL="https://github.com/chrissimpkins/Hack/releases/download/"
-
-if test "$(which pacman)"; then
+if command -v yay >/dev/null 2>&1; then
   pacman=( \
     adobe-source-{code,sans,serif}-pro-fonts \
     noto-fonts{,-emoji} \
+    otf-fira-code \
     otf-fira-{mono,sans} \
     terminus-font \
     ttf-anonymous-pro \
     ttf-dejavu \
     ttf-gentium \
+    ttf-hack \
     ttf-inconsolata \
     ttf-liberation \
     ttf-linux-libertine \
@@ -20,10 +18,8 @@ if test "$(which pacman)"; then
     ttf-roboto \
     ttf-ubuntu-font-family \
   )
-  yaourt=(\
+  aur=(\
     gohufont-powerline \
-    otf-fira-code \
-    otf-hack \
     otf-hasklig \
     otf-hermit \
     phallus-fonts-git \
@@ -34,17 +30,11 @@ if test "$(which pacman)"; then
     ttf-paratype \
     ttf-{ms,vista}-fonts \
   )
-  sudo pacman -S --noconfirm --needed ${pacman[*]}
-  yaourt -S --noconfirm ${yaourt[*]}
+  yay -S --noconfirm --needed ${pacman[*]} ${aur[*]}
 elif [ "$(uname -s)" = "Darwin" ]; then
-  curl -L -s -o /tmp/hack.tgz "$URL/$VERSION/Hack-${VERSION_}-otf.tar.gz"
+  curl -Ls -o /tmp/hack.tgz "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-3.003-ttf.tar.gz"
   tar xzvf /tmp/hack.tgz -C ~/Library/Fonts
-else
-  mkdir -p ~/.fonts
-  curl -L -s -o /tmp/hack.tgz "$URL/$VERSION/Hack-${VERSION_}-ttf.tar.gz"
-  tar xzvf /tmp/hack.tgz -C ~/.fonts
 fi
-exit
 
 tmpdir="$(mktemp -d)"
 (

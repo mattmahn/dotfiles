@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 [ "$(uname -s)" = "Darwin" ] && exit 0
 
@@ -7,5 +7,3 @@ if test "$(which pacman)"; then
 elif test "$(which apt-get)"; then
   sudo apt-get install -y sxhkd
 fi
-
-systemctl --user enable --now sxhkd.service

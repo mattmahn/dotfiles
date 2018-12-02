@@ -1,6 +1,5 @@
 #!/bin/sh
-
-if test "$(which yaourt)"; then
-  sudo pacman -S --noconfirm --needed playerctl
-  yaourt -S --noconfirm polybar i3ipc-glib-git
+exit 0
+if command -v yay >/dev/null 2>&1; then
+  yay -S --noconfirm --needed polybar i3ipc-glib-git playerctl
 fi

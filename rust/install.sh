@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ "$(which pacman)" ]; then
+if command -v pacman >/dev/null 2>&1; then
   sudo pacman -S --noconfirm --needed rustup
 else
-  curl -sSf https://sh.rustup.rs | sh
+  curl -LsSf https://sh.rustup.rs | sh
 fi

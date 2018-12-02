@@ -42,11 +42,11 @@ fi
 [ -f ~/.fehbg ] && sh ~/.fehbg &
 # compton -b --config ~/.config/compton.conf
 # redshift -c ~/.config/redshift.conf >/dev/null 2>&1 &
-# numlockx &
+numlockx &
 dunst &
 # ( sleep 20; dropboxd ) &
 urxvtd -qfo
 sxhkd &
 
-# exec i3
-exec awesome
+exec i3
+# exec awesome

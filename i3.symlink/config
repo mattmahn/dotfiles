@@ -13,8 +13,8 @@ set_from_resource $green       i3wm.color2     #00ff00
 set_from_resource $darkgreen   i3wm.color10    #00ff00
 set_from_resource $yellow      i3wm.color3     #ffff00
 set_from_resource $darkyellow  i3wm.color11    #ffff00
-set_From_resource $blue        i3wm.color4     #0000ff
-set_From_resource $darkblue    i3wm.color12    #0000ff
+set_from_resource $blue        i3wm.color4     #0000ff
+set_from_resource $darkblue    i3wm.color12    #0000ff
 set_from_resource $magenta     i3wm.color5     #ff00ff
 set_from_resource $darkmagenta i3wm.color13    #ff00ff
 set_from_resource $cyan        i3wm.color6     #00ffff
@@ -152,7 +152,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id ~/.dotfiles/polybar/launch.sh
+# exec_always --no-startup-id ~/.dotfiles/polybar/launch.sh
+bar {
+  status_command i3status
+  mode dock
+  position bottom
+}
 
 # disable titlebars for i3-gaps
 for_window [class="^.*"] border pixel 0
@@ -212,7 +217,7 @@ for_window [class="Steam" title="Friends"] floating enable, resize set 265 500
 for_window [class="keepassxc"] floating enable, resize set 880 647
 
 # awesome terminal dropdown
-exec --no-startup-id ~/.i3/dropdown.sh
+# exec --no-startup-id ~/.i3/dropdown.sh
 for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] move scratchpad
 bindsym $mod+grave [class="dropdown"] scratchpad show

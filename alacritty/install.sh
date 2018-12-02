@@ -1,5 +1,5 @@
 #!/bin/sh
 
-if which yaourt >/dev/null 2>&1; then
-  yaourt -S alacritty-git
+if command -v pacman >/dev/null 2>&1; then
+  sudo pacman -S --needed --noconfirm alacritty
 fi

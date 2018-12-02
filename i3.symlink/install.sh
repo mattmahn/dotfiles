@@ -2,9 +2,8 @@
 
 [ "$(uname -s)" = "Darwin" ] && exit 0
 
-if test "$(which yaourt)"; then
-  sudo pacman -S --noconfirm --needed rofi
-  yaourt -S --noconfirm i3-gaps i3lock i3status
+if command -v yay >/dev/null 2>&1; then
+  yay -S --noconfirm --needed i3-gaps i3lock i3status rofi
 elif test "$(which apt-get)"; then
   sudo apt-get install -y i3
 fi
