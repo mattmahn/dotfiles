@@ -16,3 +16,8 @@ fi
 if command -v npm >/dev/null 2>&1; then
   npm i -g npm-merge-driver
 fi
+
+# install gitall for parallel gitting
+if command -v cargo >/dev/null 2>&1; then
+  cargo install gitall
+fi

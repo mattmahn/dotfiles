@@ -23,14 +23,3 @@ alias gs='git status -sb'
 gi() {
   curl -s "https://www.gitignore.io/api/$*";
 }
-
-gitall() {
-  git_dirs=( $(find . -maxdepth 2 -type d -a -perm '-a=r') )
-  for gd in $git_dirs; do
-    if [[ -d "${gd}/.git" ]]; then
-      echo -e "\e[1;4;32m${gd}:\e[0m"
-      git --git-dir="${gd}/.git" --work-tree="${PWD}/${gd}" "$@"
-      echo
-    fi
-  done
-}
