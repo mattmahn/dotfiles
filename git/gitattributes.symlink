@@ -2,6 +2,7 @@
 *.cpp  diff=cpp
 *.cs   diff=csharp
 *.css  diff=css
+*.go   diff=golang
 *.html diff=html
 *.java diff=java
 *.m    diff=matlab
