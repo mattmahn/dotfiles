@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ! command -v antibody >/dev/null 2>/&1; then
+if ! command -v antibody >/dev/null 2>&1; then
   if [ "$(uname)" = "Darwin" ]; then
     brew untap -q getantibody/homebrew-antibody || true
     brew untap -q getantibody/tap/antibody || true
