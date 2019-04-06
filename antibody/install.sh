@@ -12,5 +12,5 @@ if ! command -v antibody >/dev/null 2>&1; then
 fi
 
 antibody bundle < "$DOTFILES/antibody/bundles.txt" > ~/.bundles.txt
-antibody bundle sindresorhus/pure >> ~/.bundles.txt
+antibody bundle romkatv/powerlevel10k >> ~/.bundles.txt
 antibody bundle < "$DOTFILES/antibody/last_bundles.txt" >> ~/.bundles.txt

@@ -49,6 +49,8 @@ unset config_files updated_at
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 
+. ~/.purepower
+
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
