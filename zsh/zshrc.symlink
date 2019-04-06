@@ -1,5 +1,8 @@
 #!/bin/zsh
-zmodload zsh/zprof
+
+# something with performance tracing
+#zmodload zsh/zprof
+
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES="$HOME/.dotfiles"
 
@@ -51,19 +54,18 @@ unset config_files updated_at
 
 . ~/.purepower
 
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/google-cloud-sdk/completion.zsh.inc'; fi
-
-# gulp cli task completion
-[ command -v gulp &>/dev/null ] && eval "$(gulp --completion=zsh)"
+local source_files=(
+  '~/.travis/travis.sh'
+  '/opt/google-cloud-sdk/path/path.zsh.inc'
+  '/opt/google-cloud-sdk/completion.zsh.inc'
+  "${HOME}/.iterm2_shell_integration.zsh"
+)
+for file in "$source_files[@]"; do
+  if [ -f "$file" ]; then
+    source "$file"
+  fi
+done
+unset source_files
 
 # pip cli completion
-[ python3 -m pip &>/dev/null ] && eval "$(python3 -m pip completion -z)"
-
-[ -e "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+# if python3 -m pip &>/dev/null; then eval "$(python3 -m pip completion -z)"; fi
