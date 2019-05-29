@@ -10,6 +10,7 @@ alias gcl='git clone'
 alias gcm='git commit -m'
 alias gco='git checkout'
 alias gd='git diff'
+alias gds='gd --staged'
 alias gl='git pull --prune'
 alias glg="git log --graph --decorate --oneline --abbrev-commit"
 alias glga="glg --all"
