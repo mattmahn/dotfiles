@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "$(which go)" ] && [ ! -z "$GOPATH" ]; then
+if command -v go &>/dev/null && [ -n "$GOPATH" ]; then
   mkdir -p "$GOPATH/bin" "$GOPATH/src/github.com/"
 
   packages="
@@ -16,6 +16,7 @@ if [ "$(which go)" ] && [ ! -z "$GOPATH" ]; then
     golang.org/x/tools/cmd/cover
     golang.org/x/tools/cmd/godoc
     golang.org/x/tools/cmd/goimports
+    golang.org/x/tools/cmd/gopls
     golang.org/x/tools/cmd/gorename
     golang.org/x/tools/cmd/guru
     golang.org/x/tools/cmd/stringer
