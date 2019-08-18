@@ -1,3 +1,4 @@
+*.bib  diff=bibtex
 *.c    diff=cpp
 *.cpp  diff=cpp
 *.cs   diff=csharp
@@ -10,6 +11,7 @@
 *.pl   diff=perl
 *.py   diff=python
 *.rb   diff=ruby
+*.rs   diff=rust
 *.tex  diff=tex
 
 CHANGELOG*  merge=union
