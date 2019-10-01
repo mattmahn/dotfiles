@@ -55,6 +55,8 @@ unset config_files updated_at
 . ~/.purepower
 
 local source_files=(
+  "${HOME}/.asdf/asdf.sh"
+  "${HOME}/.asdf/completions/asdf.bash"
   '~/.travis/travis.sh'
   '/opt/google-cloud-sdk/path/path.zsh.inc'
   '/opt/google-cloud-sdk/completion.zsh.inc'
