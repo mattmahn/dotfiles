@@ -2,8 +2,8 @@
 
 if ! command -v antibody >/dev/null 2>&1; then
   if [ "$(uname)" = "Darwin" ]; then
-    brew untap -q getantibody/homebrew-antibody || true
-    brew untap -q getantibody/tap/antibody || true
+    brew untap getantibody/homebrew-antibody || true
+    brew untap getantibody/tap/antibody || true
     brew tap -q getantibody/tap/antibody
     brew install getantibody/tap/antibody
   else
