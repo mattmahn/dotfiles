@@ -52,15 +52,15 @@ unset config_files updated_at
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 
-. ~/.purepower
-
 local source_files=(
+  "${HOME}/.purepower"
   "${HOME}/.asdf/asdf.sh"
   "${HOME}/.asdf/completions/asdf.bash"
   '~/.travis/travis.sh'
   '/opt/google-cloud-sdk/path/path.zsh.inc'
   '/opt/google-cloud-sdk/completion.zsh.inc'
   "${HOME}/.iterm2_shell_integration.zsh"
+  "${HOME}/.p10k.zsh"
 )
 for file in "$source_files[@]"; do
   if [ -f "$file" ]; then
