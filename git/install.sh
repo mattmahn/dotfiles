@@ -19,5 +19,5 @@ fi
 
 # install gitall for parallel gitting
 if command -v cargo >/dev/null 2>&1; then
-  cargo install gitall
+  cargo install gitall || true
 fi
