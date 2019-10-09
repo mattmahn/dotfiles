@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+readonly directory_path="$1"
+
+mkdir -p "$directory_path" && pushd "$directory_path" >/dev/null || return $?
