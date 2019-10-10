@@ -12,6 +12,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gds='gd --staged'
 alias gl='git pull --prune'
+alias gld='gl && git delete-local-merged'
 alias glg="git log --graph --decorate --oneline --abbrev-commit"
 alias glga="glg --all"
 alias gp='git push origin HEAD'
