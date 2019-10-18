@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+readonly repository="$1"
+readonly directory="$2"
+
+dst_dir="$directory"
+# maintain normal invocation of `git clone <repo>`:
+# create directory with repo name
+if [ -z "$directory" ]; then
+  dst_dir="$(basename -s '.git' "$repository")"
+fi
+
+git clone "$repository" "$dst_dir" && pushd "$dst_dir" >/dev/null || return $?
