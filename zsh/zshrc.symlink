@@ -53,6 +53,7 @@ unset config_files updated_at
 [ -f ~/.localrc ] && . ~/.localrc
 
 local source_files=(
+  "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"  # keep at top
   "${HOME}/.purepower"
   "${HOME}/.asdf/asdf.sh"
   "${HOME}/.asdf/completions/asdf.bash"
