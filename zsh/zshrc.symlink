@@ -34,6 +34,9 @@ done
 # load antibody plugins
 source ~/.bundles.txt
 
+# gotta load asdf early, so language detection works accurately
+[[ -f "${HOME}/.asdf/asdf.sh" ]] && . "${HOME}/.asdf/asdf.sh"
+
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
   source "$file"
@@ -60,7 +63,6 @@ unset config_files updated_at
 [ -f ~/.localrc ] && . ~/.localrc
 
 local source_files=(
-  "${HOME}/.asdf/asdf.sh"
   "${HOME}/.asdf/completions/asdf.bash"
   '~/.travis/travis.sh'
   '/opt/google-cloud-sdk/path/path.zsh.inc'
@@ -74,3 +76,5 @@ for file in "$source_files[@]"; do
   fi
 done
 unset source_files
+
+export PATH="${PATH}:/usr/local/texlive/2019basic/bin/x86_64-darwin/"
