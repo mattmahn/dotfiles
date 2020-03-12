@@ -13,6 +13,7 @@
 .dir-locals.el
 .idea/
 .java-version
+.log/
 .org-id-locations
 .project
 .projectile

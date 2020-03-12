@@ -77,4 +77,4 @@ for file in "$source_files[@]"; do
 done
 unset source_files
 
-export PATH="${PATH}:/usr/local/texlive/2019basic/bin/x86_64-darwin/"
+# export PATH="${PATH}:/usr/local/texlive/2019basic/bin/x86_64-darwin/"
