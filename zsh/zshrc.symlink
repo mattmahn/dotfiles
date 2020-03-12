@@ -63,6 +63,7 @@ unset config_files updated_at
 [ -f ~/.localrc ] && . ~/.localrc
 
 local source_files=(
+  "${HOME}/.fzf.zsh"
   "${HOME}/.asdf/completions/asdf.bash"
   '~/.travis/travis.sh'
   '/opt/google-cloud-sdk/path/path.zsh.inc'
