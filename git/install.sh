@@ -18,6 +18,18 @@ if command -v npm >/dev/null 2>&1; then
 fi
 
 # install gitall for parallel gitting
-if command -v cargo >/dev/null 2>&1; then
+if if-command cargo; then
   cargo install gitall || true
+fi
+
+if if-command brew; then
+  brew install git-absorb
+elif if-command cargo; then
+  cargo install git-absorb
+fi
+
+if if-command brew; then
+  brew install git-revise
+elif python3 -m pip >/dev/null; then
+  python3 -m pip install --user -U git-revise
 fi
