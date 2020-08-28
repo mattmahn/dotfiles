@@ -1,4 +1,6 @@
 # vim:autoindent:noexpandtab:ts=4:sw=4:
+[absorb]
+	maxStack = 20
 [alias]
 	co                  = checkout
 	promote             = !$ZSH/bin/git-promote
