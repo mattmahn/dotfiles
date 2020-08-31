@@ -8,12 +8,25 @@ else
 fi
 
 # better diffs
-if command -v diff-so-fancy >/dev/null 2>&1; then
-  git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+if ! if-command delta; then
+  # install
+  if if-command yay; then
+    yay -S git-delta
+  elif if-command dnf; then
+    dnf install git-delta
+  elif if-command pkg; then
+    pkg install git-delta
+  elif if-command brew; then
+    brew install git-delta
+  elif if-command cargo; then
+    cargo install git-delta
+  fi
+  # configure
+  git config --global core.pager delta
 fi
 
 # install npm/yarn merge driver
-if command -v npm >/dev/null 2>&1; then
+if if-command npm; then
   npm i -g npm-merge-driver
 fi
 

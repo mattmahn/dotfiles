@@ -23,5 +23,5 @@ alias gpu='git push -u origin HEAD'
 alias gs='git status -sb'
 
 gi() {
-  curl -s "https://www.gitignore.io/api/$*";
+  curl -SsL "https://www.toptal.com/developers/gitignore/api/$*"
 }

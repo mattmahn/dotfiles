@@ -14,6 +14,4 @@ elif command -v pkg_add >/dev/null 2>&1; then
 elif command -v brew >/dev/null 2>&1; then
   brew install fzf
   "$(brew --prefix)/opt/fzf/install"
-elif command -v cargo >/dev/null 2>&1; then
-  cargo install -f zoxide
 fi

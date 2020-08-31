@@ -1,0 +1,20 @@
+#!/bin/sh
+
+file_mode=
+file_path=
+
+case $# in
+  1)
+    file_path="$1"
+    ;;
+  2)
+    file_mode="$1"
+    file_path="$2"
+    ;;
+  *)
+    echo gimme 1 or 2 args
+    return 1
+esac
+
+[ -f "$file_path" ] || touch "$file_path"
+chmod "$file_mode" "$file_path"

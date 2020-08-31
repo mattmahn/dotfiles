@@ -11,6 +11,7 @@
 .\#*
 .classpath
 .dir-locals.el
+.glab-cli
 .idea/
 .java-version
 .log/
