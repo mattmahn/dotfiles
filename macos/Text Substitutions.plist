@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>shortcut</key>
+		<string>aup</string>
+		<key>phrase</key>
+		<string>↑</string>
+	</dict>
+	<dict>
+		<key>shortcut</key>
+		<string>aright</string>
+		<key>phrase</key>
+		<string>→</string>
+	</dict>
+	<dict>
+		<key>shortcut</key>
+		<string>adown</string>
+		<key>phrase</key>
+		<string>↓</string>
+	</dict>
+	<dict>
+		<key>shortcut</key>
+		<string>aleft</string>
+		<key>phrase</key>
+		<string>←</string>
+	</dict>
+
+	<dict>
+		<key>shortcut</key>
+		<string>glambda</string>
+		<key>phrase</key>
+		<string>λ</string>
+	</dict>
+</array>
+</plist>
+<!-- vim: set noexpandtab : -->
