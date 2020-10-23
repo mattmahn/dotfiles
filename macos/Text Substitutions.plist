@@ -4,6 +4,13 @@
 <array>
 	<dict>
 		<key>shortcut</key>
+		<string>ascii-shrug</string>
+		<key>phrase</key>
+		<string>¯\_(ツ)_/¯</string>
+	</dict>
+
+	<dict>
+		<key>shortcut</key>
 		<string>aup</string>
 		<key>phrase</key>
 		<string>↑</string>
