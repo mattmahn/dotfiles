@@ -79,3 +79,6 @@ done
 unset source_files
 
 # export PATH="${PATH}:/usr/local/texlive/2019basic/bin/x86_64-darwin/"
+
+eval "$(asdf exec direnv hook zsh)"
+function direnv() { asdf exec direnv "$@" }
