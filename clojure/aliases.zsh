@@ -1,0 +1,5 @@
+alias portal='bb -cp "$(clojure -Spath -Sdeps "{:deps {djblue/portal {:mvn/version \"0.7.0\"} clj-commons/clj-yaml {:mvn/version \"0.7.2\"}}}")" -m portal.main'
+alias edn='portal edn'
+alias json='portal json'
+alias transit='portal transit'
+alias yaml='portal yaml'
