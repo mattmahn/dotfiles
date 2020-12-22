@@ -54,7 +54,8 @@
           (println "Status:" status)
           (println "curl error:" (:err data))
           (println "API response:" (json/generate-string rbody))
-          )))))
+          ))
+      (System/exit 1))))
 
 ;; Local Variables:
 ;; mode: clojure
