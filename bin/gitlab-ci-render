@@ -1,4 +1,5 @@
 #!/usr/bin/env bb
+;; vim:ft=clojure
 (ns user
   (:require [babashka.curl :as curl]
             [babashka.process :refer [process]]
@@ -54,3 +55,7 @@
           (println "curl error:" (:err data))
           (println "API response:" (json/generate-string rbody))
           )))))
+
+;; Local Variables:
+;; mode: clojure
+;; End:
