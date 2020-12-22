@@ -1,0 +1,56 @@
+#!/usr/bin/env bb
+(ns user
+  (:require [babashka.curl :as curl]
+            [babashka.process :refer [process]]
+            [cheshire.core :as json]
+            [clojure.java.io :as io]
+            [clojure.string :as str]
+            [clj-yaml.core :as yaml]))
+
+(defn is-tty [fd]
+  (> (.available fd) 0))
+(def gitlab-file (if (is-tty System/in)
+                   (io/reader System/in)
+                   (io/reader (io/file ".gitlab-ci.yml"))))
+(def gitlab-ci-json (->> gitlab-file
+                         slurp
+                         yaml/parse-string
+                         json/generate-string))
+
+(def git-url
+  (let [url             (->> @(process '(git config --get remote.origin.url))
+                             :out
+                             slurp
+                             str/trim)
+        [[_ http-host]] (re-seq #"://([\w\.]+)[:/]" url)
+        [[_ ssh-host]]  (re-seq #"@([\w\.]+)[:/]" url)]
+    (or (System/getenv "GITLAB_HOST") ssh-host http-host)))
+(def token (or (System/getenv "GITLAB_TOKEN")
+               (->> @(process `("glab" "config" "get" "--host" ~git-url "token"))
+                    :out
+                    slurp
+                    str/trim)))
+
+(let [url (str "https://" git-url "/api/v4/ci/lint")
+      body (json/generate-string {"content" gitlab-ci-json})]
+  (try
+    (as-> (curl/post url {:body body
+                          :headers {"Authorization" (str "Bearer " token)
+                                    "Content-Type" "application/json"}
+                          :query-params {"include_merged_yaml" "true"}
+                          :throw true})
+        $
+      (:body $)
+      (json/parse-string $)
+      (get $ "merged_yaml")
+      (println $))
+    (catch Exception e
+      (let [data (ex-data e)
+            status (:status data)
+            rbody (->> data :body json/parse-string)
+            errors (get rbody "errors")]
+        (binding [*out* *err*]
+          (println "Status:" status)
+          (println "curl error:" (:err data))
+          (println "API response:" (json/generate-string rbody))
+          )))))
