@@ -1,6 +1,6 @@
 #!/bin/sh
 
-asdf_version='v0.7.8'
+asdf_version='v0.8.0'
 asdf_dir="${HOME}/.asdf"
 
 if [ ! -d "$asdf_dir" ]; then
