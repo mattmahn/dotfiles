@@ -16,7 +16,7 @@ sudo python3 -m pip install -U neovim
 gem install --no-document neovim
 
 if [[ ! -d ~/.vimfiles ]]; then
-  git clone git@github.com:mattmahn/vimfiles.git ~/.vimfiles
+  git clone https://github.com/mattmahn/vimfiles.git ~/.vimfiles
   mkdir -p ~/.config/nvim
   # see `nvim +help nvim-from-vim`
   (

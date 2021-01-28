@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-[[ -d "$HOME/.cargo/bin" ]] && export PATH="$PATH:$HOME/.cargo/bin"
+[[ -f ~/.cargo/env ]] && source ~/.cargo/env
 
-command -v rustc &>/dev/null || return
+if-command rustc || return
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
