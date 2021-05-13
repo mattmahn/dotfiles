@@ -23,5 +23,11 @@ alias gpu='git push -u origin HEAD'
 alias gs='git status -sb'
 
 gi() {
-  curl -SsL "https://www.toptal.com/developers/gitignore/api/$*"
+  local res="$(curl -SsL "https://www.toptal.com/developers/gitignore/api/$*")"
+  if [[ "$1" = 'list' ]]; then
+    local items="$(echo "$res" | tr ',' $'\n' | fzf --multi)"
+    curl -SsL "https://www.toptal.com/developers/gitignore/api/$(paste -sd, - <<<"$items")"
+  else
+    echo -n "$res"
+  fi
 }
