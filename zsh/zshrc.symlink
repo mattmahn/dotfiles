@@ -70,6 +70,7 @@ local source_files=(
   '/opt/google-cloud-sdk/completion.zsh.inc'
   "${HOME}/.iterm2_shell_integration.zsh"
   "${HOME}/.p10k.zsh"
+  "${HOME}/.jfrog/jfrog_zsh_completion"
 )
 for file in "$source_files[@]"; do
   if [ -f "$file" ]; then
