@@ -34,7 +34,7 @@
 [core]
 	autocrlf          = input
 	compression       = -1
-	editor            = vim
+	editor            = nvim
 	excludesFile      = ~/.gitignore
 	precomposeUnicode = true
 	preloadIndex      = true
@@ -66,3 +66,5 @@
 	rebase = false
 [push]
 	default = simple
+[rerere]
+	enabled = true
