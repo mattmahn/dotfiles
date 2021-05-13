@@ -55,3 +55,14 @@ if command -v asdf >/dev/null 2>&1; then
     fi
   }
 fi
+
+
+# Login to an existing AWS SSO profile
+fawssso() {
+  local profile="$(env -u AWS_PROFILE aws configure list-profiles | fzf)"
+  [[ -z "$profile" ]] && return 1
+  export AWS_PROFILE="$profile"
+  if ! aws sts get-caller-identity --profile "$profile" &>/dev/null; then
+    aws sso login --profile "$profile"
+  fi
+}
