@@ -71,6 +71,7 @@ local source_files=(
   "${HOME}/.iterm2_shell_integration.zsh"
   "${HOME}/.p10k.zsh"
   "${HOME}/.jfrog/jfrog_zsh_completion"
+  "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 )
 for file in "$source_files[@]"; do
   if [ -f "$file" ]; then
