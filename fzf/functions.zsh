@@ -59,8 +59,8 @@ fi
 
 # Login to an existing AWS SSO profile
 fawssso() {
-  local profile="$(env -u AWS_PROFILE aws configure list-profiles | fzf)"
-  [[ -z "$profile" ]] && return 1
+  local profile="$(env -u AWS_PROFILE aws configure list-profiles | fzf --query "$1")"
+  [[ -z "$profile" ]] && return 0
   export AWS_PROFILE="$profile"
   if ! aws sts get-caller-identity --profile "$profile" &>/dev/null; then
     aws sso login --profile "$profile"
