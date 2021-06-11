@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+remote="$(git remote | fzf --prompt 'Environments for which remote? ' --select-1)"
+
+git fetch "$remote" "refs/environments/*:refs/remotes/${remote}/environments/*"
+
+environment="$(find ".git/refs/remotes/${remote}/environments" \
+	-type d -depth 1 -exec basename '{}' + \
+	| fzf --prompt 'Which environment? ' --select-1)"
+
+deployment="$(find \
+	".git/refs/remotes/${remote}/environments/${environment}/deployments" \
+	-depth 1 -exec basename '{}' + \
+	| sort -rn \
+	| fzf --prompt 'Which deployment? ' --select-1)"
+
+git checkout "${remote}/environments/${environment}/deployments/${deployment}"
