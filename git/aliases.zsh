@@ -17,9 +17,11 @@ alias glg="git log --graph --decorate --oneline --abbrev-commit"
 alias glga="glg --all"
 alias gp='git push origin HEAD'
 alias gpa='git push origin --all'
-alias gpr='gp && git pr'
 alias gpf='gp --force-with-lease'
+alias gpr='gp && git pr'
 alias gpu='git push -u origin HEAD'
+alias grea='git rebase --abort'
+alias grec='git rebase --continue'
 alias gs='git status -sb'
 
 gi() {
