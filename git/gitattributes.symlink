@@ -1,3 +1,4 @@
+*.sh   diff=bash
 *.bib  diff=bibtex
 *.c    diff=cpp
 *.cpp  diff=cpp
