@@ -12,7 +12,7 @@
 	logs                = log --pretty=\"format:%h %G? %aN  %s\"
 	g                   = grep --break --heading --line-number
 	gi                  = grep --break --heading --line-number -i
-	changed             = show --pretty=\"format:\" --name-only
+	changed             = diff-tree --no-commit-id --name-only -r
 	cp-branch-name      = !git rev-parse --abbrev-ref HEAD | pbcopy
 	delete-local-merged = !zsh -ic git-delete-local-merged
 	add-upstream        = !zsh -ic \"add-upstream $*\"
