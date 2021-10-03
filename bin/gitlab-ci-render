@@ -6,7 +6,19 @@
             [cheshire.core :as json]
             [clojure.java.io :as io]
             [clojure.string :as str]
+            [clojure.tools.cli :refer [parse-opts]]
             [clj-yaml.core :as yaml]))
+
+(def cli-options
+  [["-o" "--output FORMAT" "Output format"
+    :default "yaml"
+    :validate [#(contains? #{"json" "yaml"} %) "Must be yaml or json"]]])
+
+(def cli (parse-opts *command-line-args* cli-options))
+(when (:errors cli)
+  (binding [*out* *err*]
+    (println (str/join \n (:errors cli)))
+    (System/exit 1)))
 
 (defn is-tty [fd]
   (> (.available fd) 0))
@@ -33,7 +45,10 @@
                     str/trim)))
 
 (let [url (str "https://" git-host "/api/v4/ci/lint")
-      body (json/generate-string {"content" gitlab-ci-json})]
+      body (json/generate-string {"content" gitlab-ci-json})
+      output-formatter (case (get-in cli [:options :output])
+                         "json" #(json/generate-string (yaml/parse-string %) {:pretty true})
+                         "yaml" identity)]
   (try
     (as-> (curl/post url {:body body
                           :headers {"Authorization" (str "Bearer " token)
@@ -44,6 +59,7 @@
       (:body $)
       (json/parse-string $)
       (get $ "merged_yaml")
+      (output-formatter $)
       (println $))
     (catch Exception e
       (let [data (ex-data e)
