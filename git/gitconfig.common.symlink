@@ -40,6 +40,7 @@
 	preloadIndex      = true
 	whitespace        = trailing-space,space-before-tab
 [diff]
+	algorithm = histogram
 	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
@@ -53,6 +54,7 @@
 [help]
 	autocorrect = 10
 [merge]
+	conflictStyle = zdiff3
 	tool = meld
 [merge "npm-merge-driver"]
 	name = Automatically merge npm lockfiles
