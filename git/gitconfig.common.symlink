@@ -41,6 +41,7 @@
 	whitespace        = trailing-space,space-before-tab
 [diff]
 	algorithm = histogram
+	colorMoved = zebra
 	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
