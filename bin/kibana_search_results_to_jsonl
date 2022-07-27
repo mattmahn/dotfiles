@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Extracts & prints the documents from a Kibana search query.
+#
+# Usage:
+#   1. search Kibana
+#   2. click "Inspect" at top-right
+#   3. open "Response" tab
+#   5. pipe response into this script
+
+set -eu
+
+jq '.hits | .hits | .[]._source' < /dev/stdin
