@@ -19,7 +19,7 @@
 	sync                = !zsh -ic git-sync
 	fm                  = !zsh -ic \"git-fetch-merge $*\"
 	pr                  = !zsh -ic \"open-pr $*\"
-	yolo                = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+	yolo                = !git commit -m \"$(curl -sSL whatthecommit.com/index.txt)\"
 [apply]
 	whitespace = nowarn
 [color]
