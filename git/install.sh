@@ -42,7 +42,14 @@ elif if-command cargo; then
 fi
 
 if if-command brew; then
+  brew install difftastic
+elif if-command cargo; then
+  cargo install difftastic
+fi
+
+if if-command brew; then
   brew install git-revise
 elif python3 -m pip >/dev/null; then
   python3 -m pip install --user -U git-revise
 fi
+
