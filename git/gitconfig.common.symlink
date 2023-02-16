@@ -42,9 +42,14 @@
 [diff]
 	algorithm = histogram
 	colorMoved = zebra
-	tool = diffmerge
+	external = difft --display inline
+	tool = difftastic # the default for `git-difftool`
+[diff "ansible-vault"]
+	textconv = ansible-vault view
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
+[difftool "difftastic"]
+	cmd = difft --display inline "$LOCAL" "$REMOTE"
 [difftool]
 	prompt = false
 [github]
