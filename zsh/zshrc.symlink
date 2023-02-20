@@ -31,8 +31,22 @@ for file in ${(M)config_files:#*/path.zsh}; do
   source "$file"
 done
 
-# load antibody plugins
-source ~/.bundles.txt
+                                                             ### ZSH Plugins {{{
+# Set the name of the static .zsh plugins file antidote will generate.
+zsh_plugins=${HOME}/.zsh_plugins.zsh
+# Ensure you have a .zsh_plugins.txt file where you can add plugins.
+[[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
+# Lazy-load antidote.
+fpath+=(${HOME}/.antidote)
+autoload -Uz $fpath[-1]/antidote
+# Generate static file in a subshell when .zsh_plugins.txt is updated.
+if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
+  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
+fi
+# Source your static plugins file.
+source $zsh_plugins
+unset zsh_plugins
+                                                             ### ZSH Plugins }}}
 
 # gotta load asdf early, so language detection works accurately
 [[ -f "${HOME}/.asdf/asdf.sh" ]] && . "${HOME}/.asdf/asdf.sh"
