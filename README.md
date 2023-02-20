@@ -18,6 +18,7 @@ First, make sure you have all those things installed:
 - `tar`: to extract downloaded stuff
 - `zsh`: to actually run the dotfiles
 - `sudo`: some configs may need that
+- `brew`: macOS (and technically Linux) package manager
 
 ### Install
 
