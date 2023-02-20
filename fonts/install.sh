@@ -1,5 +1,17 @@
 #!/bin/bash
 
+if if-command brew; then
+  brew tap homebrew/cask-fonts
+
+  brew install \
+    font-fira-code \
+    font-fira-mono \
+    font-hasklig \
+    font-iosevka \
+    font-recursive \
+    font-recursive-code
+fi
+
 if command -v yay >/dev/null 2>&1; then
   pacman=( \
     adobe-source-{code,sans,serif}-pro-fonts \
