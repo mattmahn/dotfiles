@@ -5,6 +5,7 @@
 !/i3status
 !compton.conf
 !dunst
+!nvim/**
 !polybar
 !ranger/rc.conf
 !ranger/rifle.conf
