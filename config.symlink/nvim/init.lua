@@ -1,5 +1,5 @@
-require("plugins")
+require 'plugins'
 
-vim.cmd [[
-	runtime! lua/modules/options.lua
-]]
+require 'user.options'
+require 'user.keymaps'
+require 'user.autocommands'

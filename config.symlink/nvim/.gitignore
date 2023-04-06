@@ -1,6 +1,7 @@
-# ignore everything that the system automtically puts in ~/.config, but...
+# ignore everything, but...
 /*
 
 # don't ignore the following files:
-init.lua
-lua/modules/options.lua
+!init.lua
+!lua/**
+!ftplugin/**

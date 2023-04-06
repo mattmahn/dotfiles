@@ -35,42 +35,53 @@ packer.init({
 return packer.startup(function(use)
   -- My plugins here
   use 'wbthomason/packer.nvim'               -- Have packer manage itself
-  use "nvim-lua/popup.nvim"                  -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"                -- Useful lua functions used by lots of plugins
-
-
-  use { "ellisonleao/gruvbox.nvim" }         -- Colorscheme
-
-  use({ "cappyzawa/trim.nvim",               -- Auto trim whitespace
-  config = function()
-    require("trim").setup({})
-  end
-  })
-
-  -- Searching
+  -- An implementation of vim's Popup API in Neovim
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-lua/popup.nvim',
+    requires = {{ 'nvim-lua/plenary.nvim' }},
   }
 
+  -- colorschemes
+  use 'savq/melange-nvim'
+  vim.cmd 'colorscheme melange'
+
+  use { 'editorconfig/editorconfig-vim' }
+
+  -- Tree-sitter
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = function ()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true})
+      ts_update()
+    end,
   }
-
-  -- Show inline comments of git blame
-  use { 'f-person/git-blame.nvim' }
-
-  -- Show all buffers as a status item
-  use { 'bling/vim-bufferline' }
-
-  -- Preview markdown files
-  use { 'ellisonleao/glow.nvim' }
-
-  -- File tree
   use {
-    'nvim-tree/nvim-tree.lua',
-    requires = "nvim-tree/nvim-web-devicons"
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    config = function ()
+      require('nvim-treesitter.configs').setup {
+        textobjects = {
+          move = { enable = true },
+          select = { enable = true, lookahead = true, },
+          swap = { enable = true },
+        }
+      }
+    end
+  }
+  use {
+    'RRethy/nvim-treesitter-endwise',
+    config = function ()
+      require('nvim-treesitter.configs').setup {
+        endwise = { enable = true }
+      }
+    end
+  }
+  use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    config = function ()
+      require('nvim-treesitter.configs').setup {
+        context_commentstring = { enable = true }
+      }
+    end,
   }
 
   -- LSP
@@ -91,13 +102,101 @@ return packer.startup(function(use)
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},     -- Required
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-    }
+    },
+    config = function ()
+      local lsp = require('lsp-zero').preset({})
+      lsp.on_attach(function (client, bufnr)
+        lsp.default_keymaps({ buffer = bufnr })
+      end)
+      -- Valid server list is found here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
+      lsp.ensure_installed({
+        'awk_ls',
+        'bashls',
+        'cucumber_language_server',
+        'dockerls',
+        'eslint',
+        'gopls',
+        'graphql',
+        'html',
+        'marksman',
+        'lua_ls',
+        'rust_analyzer',
+        'terraformls',
+        'tsserver',
+        'yamlls',
+      })
+      lsp.setup()
+    end
+  }
+  use { -- show what LSP is doing
+    'j-hui/fidget.nvim',
+    config = function ()
+      require('fidget').setup()
+    end,
+  }
+
+  -- Searching
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} },
   }
 
   use {
-    'lewis6991/gitsigns.nvim',
-    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+    'folke/trouble.nvim',
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function ()
+      require('trouble').setup()
+    end
+  }
+
+  use {
+    'm4xshen/autoclose.nvim',
+    config = function ()
+      require('autoclose').setup()
+    end,
+  }
+  use {
+    'terrortylor/nvim-comment',
+    config = function ()
+      require('nvim_comment').setup()
+    end,
+  }
+  use {
+    'kylechui/nvim-surround', tag = '*',
+    config = function ()
+      require('nvim-surround').setup()
+    end,
+  }
+
+  -- Get some nice Git decorations
+  use {
+    'lewis6991/gitsigns.nvim', commit = 'f412f51d0eaf0905a2759c8087090071689bb8fb',
+    config = function()
+      require('gitsigns').setup()
+    end,
+  }
+
+  -- prettier statusline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function ()
+      require('lualine').setup()
+    end,
+  }
+
+  -- File tree
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = "nvim-tree/nvim-web-devicons"
+  }
+
+
+  use {
+    'folke/which-key.nvim',
+    config = function ()
+      require('which-key').setup()
+    end,
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
