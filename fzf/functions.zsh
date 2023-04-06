@@ -66,3 +66,12 @@ fawssso() {
     aws sso login --profile "$profile"
   fi
 }
+
+fkubectl() {
+  local context="$(kubectl config get-contexts --output name | fzf --query "$*" -1)"
+  [[ -z "$context" ]] && return 0
+  kubectl config use-context "$context"
+  if ! kubectl --context "$context" auth can-i --quiet list pods; then
+    echo "Cannot list pods.  You may need to refresh credentials?"
+  fi
+}
