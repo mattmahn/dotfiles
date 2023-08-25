@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pull_pids=()
+for image in "$@"; do
+  docker pull "$image" &
+  pull_pids+=("$!")
+done
+
+wait "${pull_pids[@]}"
