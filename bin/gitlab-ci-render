@@ -45,7 +45,7 @@
                     str/trim)))
 
 (def project-id (or (System/getenv "CI_PROJECT_ID")
-               (->> @(process `("glab" "--host" ~git-host "variable" "CI_PROJECT_ID"))
+               (->> @(process `("glab" "--host" ~git-host "variable" "get" "CI_PROJECT_ID"))
                     :out
                     slurp
                     str/trim)))
