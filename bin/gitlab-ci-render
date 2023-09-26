@@ -44,7 +44,13 @@
                     slurp
                     str/trim)))
 
-(let [url (str "https://" git-host "/api/v4/ci/lint")
+(def project-id (or (System/getenv "GI_PROJECT_ID")
+               (->> @(process `("glab" "--host" ~git-host "variable" "CI_PROJECT_ID"))
+                    :out
+                    slurp
+                    str/trim)))
+
+(let [url (str "https://" git-host "/api/v4/projects/" project-id "/ci/lint")
       body (json/generate-string {"content" gitlab-ci-json})
       output-formatter (case (get-in cli [:options :output])
                          "json" #(json/generate-string (yaml/parse-string %) {:pretty true})
