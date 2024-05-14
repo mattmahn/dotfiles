@@ -78,6 +78,7 @@ unset config_files updated_at
 [ -f ~/.localrc ] && . ~/.localrc
 
 local source_files=(
+  "${HOME}/plugins/java/set-java-home.zsh"
   "${XDG_CONFIG_HOME:-${HOME}/.config}/asdf-direnv/zshrc"
   "${HOME}/.fzf.zsh"
   '~/.travis/travis.sh'

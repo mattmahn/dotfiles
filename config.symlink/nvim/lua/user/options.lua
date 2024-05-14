@@ -19,7 +19,6 @@ local options = {
   },
   mouse = 'a',
   number = true,
-  pastetoggle = '<F2>',
   relativenumber = true,
   scrolloff = 4,
   shiftwidth = 0,  -- use tabstop

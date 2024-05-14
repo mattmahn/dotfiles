@@ -23,6 +23,7 @@ alias gpu='git push -u origin HEAD'
 alias grea='git rebase --abort'
 alias grec='git rebase --continue'
 alias gs='git status -sb'
+alias gsw='git switch'
 
 gi() {
   local res="$(curl -SsL "https://www.toptal.com/developers/gitignore/api/$*")"

@@ -45,8 +45,6 @@ return packer.startup(function(use)
   use 'savq/melange-nvim'
   vim.cmd 'colorscheme melange'
 
-  use { 'editorconfig/editorconfig-vim' }
-
   -- Tree-sitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -123,7 +121,6 @@ return packer.startup(function(use)
         'rust_analyzer',
         'terraformls',
         'tsserver',
-        'yamlls',
       })
       lsp.setup()
     end
@@ -132,6 +129,56 @@ return packer.startup(function(use)
     'j-hui/fidget.nvim',
     config = function ()
       require('fidget').setup()
+    end,
+  }
+
+  -- completion
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/nvim-cmp',
+
+      { 'L3MON4D3/LuaSnip', tag = 'v1.*' },
+    },
+    config = function ()
+      local cmp = require 'cmp'
+      cmp.setup {
+        snippet = {
+          expand = function (args)
+            require('luasnip').lsp_expand(args.body)
+          end
+        },
+        mapping = cmp.mapping.preset.insert {
+          ['<CR>'] = cmp.mapping.confirm { select = true },  -- accept currently selected item
+        },
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' }
+        }, {
+          { name = 'buffer' }
+        })
+      }
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          {
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' }
+            }
+          }
+        }),
+      })
     end,
   }
 
@@ -181,7 +228,17 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function ()
-      require('lualine').setup()
+      require('lualine').setup {
+        extensions = { 'man', 'quickfix', 'trouble' },
+      }
+    end,
+  }
+  use {
+    'kdheepak/tabline.nvim',
+    config = function ()
+      require('tabline').setup {
+        enable = true,
+      }
     end,
   }
 
