@@ -73,14 +73,7 @@ return packer.startup(function(use)
       }
     end
   }
-  use {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    config = function ()
-      require('nvim-treesitter.configs').setup {
-        context_commentstring = { enable = true }
-      }
-    end,
-  }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- LSP
   use {
