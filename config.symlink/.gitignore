@@ -12,3 +12,4 @@
 !redshift.conf
 !sxhkd
 !systemd/**/*.service
+!yazi
