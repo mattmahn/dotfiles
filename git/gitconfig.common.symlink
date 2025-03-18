@@ -21,7 +21,7 @@
 	pr                  = !zsh -ic \"open-pr $*\"
 	root                = !pwd
 	yeet                = !git commit --amend --no-edit --no-verify && git push --force-with-lease
-	yolo                = !git commit -m \"$(curl -sSL whatthecommit.com/index.txt)\"
+	yolo                = !git commit --no-verify -m \"$(curl -sSL whatthecommit.com/index.txt)\"
 [apply]
 	whitespace = nowarn
 [color]
