@@ -41,10 +41,22 @@ elif if-command cargo; then
   cargo install git-absorb
 fi
 
+# syntax-aware diff
 if if-command brew; then
   brew install difftastic
 elif if-command cargo; then
   cargo install difftastic
+fi
+
+# syntax-aware merge
+if if-command pacman; then
+  pacman -S mergiraf
+elif if-command apk; then
+  apk add mergiraf mergiraf-doc
+elif if-command brew; then
+  brew install mergiraf
+elif if-command cargo; then
+  cargo install --locked mergiraf
 fi
 
 if if-command brew; then

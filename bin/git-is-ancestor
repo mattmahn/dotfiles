@@ -1,0 +1,10 @@
+#!/bin/sh
+
+readonly POSSIBLE_ANCESTOR="$1"
+readonly REFERENCE="$2"
+
+if git merge-base --is-ancestor "$POSSIBLE_ANCESTOR" "$REFERENCE"; then
+  echo "$POSSIBLE_ANCESTOR is an ancestor of $REFERENCE"
+else
+  echo "$POSSIBLE_ANCESTOR is NOT an ancestor of $REFERENCE"
+fi

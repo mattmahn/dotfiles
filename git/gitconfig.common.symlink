@@ -65,8 +65,10 @@
 [init]
 	defaultBranch = main
 [merge]
-	conflictStyle = zdiff3
-	tool = meld
+	conflictStyle = diff3
+[merge "mergiraf"]
+  name = mergiraf
+  driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 [merge "npm-merge-driver"]
 	name = Automatically merge npm lockfiles
 	driver = npx npm-merge-driver merge %A %O %B %P
