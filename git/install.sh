@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if ! if-command git; then
+  if if-command brew; then
+    brew install git
+  fi
+fi
+
 # Don't ask ssh password all the time
 if [ "$(uname -s)" = "Darwin" ]; then
   git config --global credential.helper osxkeychain
