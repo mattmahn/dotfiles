@@ -1,5 +1,5 @@
 #!/bin/zsh
-export LSCOLORS='exfxcxdxbxegedabagacad'
+export LSCOLORS="$(vivid generate ayu)"
 export CLICOLOR=true
 
 fpath=($DOTFILES/functions $fpath)
