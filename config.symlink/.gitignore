@@ -5,6 +5,7 @@
 !/i3status
 !compton.conf
 !dunst
+!helix
 !nvim/**
 !polybar
 !ranger/rc.conf
