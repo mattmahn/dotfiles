@@ -1,5 +1,5 @@
 # https://yazi-rs.github.io/docs/configuration/overview
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+#:schema https://yazi-rs.github.io/schemas/yazi.json
 
-[manager]
+[mgr]
 show_hidden = true
