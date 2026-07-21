@@ -31,11 +31,6 @@ if ! if-command delta; then
   git config --global core.pager delta
 fi
 
-# install npm/yarn merge driver
-if if-command npm; then
-  npm i -g npm-merge-driver
-fi
-
 # install gitall for parallel gitting
 if if-command cargo; then
   cargo install gitall || true
