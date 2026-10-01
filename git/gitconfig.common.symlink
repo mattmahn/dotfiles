@@ -66,6 +66,7 @@
 	defaultBranch = main
 [merge]
 	conflictStyle = diff3
+	tool = mergiraf
 [merge "mergiraf"]
   name = mergiraf
   driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
